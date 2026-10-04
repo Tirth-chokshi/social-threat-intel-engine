@@ -23,7 +23,7 @@ from fastapi.staticfiles import StaticFiles
 
 from config import (APP_AUTH_PASSWORD, APP_AUTH_USERNAME, APP_ENV, WEB_DIST, RUNS, STREAMS,
                     STREAM_WINDOW_SECONDS, STREAM_RETENTION_SECONDS, MIN_EDGE_WEIGHT, TIME_WINDOW, X_BEARER_TOKEN,
-                    DEMO_RUNS, ROOT)
+                    DEMO_RUNS, ROOT, DEMO_MODE, MAX_UPLOAD_BYTES, PROTECTED_DATASET_IDS)
 from engine.xstore import NotXApiData, ingest, open_db, posts_from_responses, read_posts
 from connectors.x_search import XApiError, search_recent
 from engine.pipeline import analyze, STAGES
@@ -77,31 +77,39 @@ def startup_seed_demo_data():
 @app.middleware("http")
 async def require_deployment_auth(request, call_next):
     if request.url.path == "/_health":
-        return await call_next(request)
-    if APP_ENV != "production" and not (APP_AUTH_USERNAME and APP_AUTH_PASSWORD):
-        return await call_next(request)
-    if not APP_AUTH_USERNAME or not APP_AUTH_PASSWORD:
+        response = await call_next(request)
+    elif DEMO_MODE or APP_ENV in ("demo", "public") or (APP_ENV != "production" and not (APP_AUTH_USERNAME and APP_AUTH_PASSWORD)):
+        response = await call_next(request)
+    elif not APP_AUTH_USERNAME or not APP_AUTH_PASSWORD:
         return JSONResponse(status_code=503, content={"detail": "Deployment authentication is not configured."})
-
-    authorization = request.headers.get("authorization", "")
-    try:
-        scheme, encoded = authorization.split(" ", 1)
-        username, password = base64.b64decode(encoded, validate=True).decode("utf-8").split(":", 1)
-    except (ValueError, UnicodeDecodeError):
-        username = password = ""
-        scheme = ""
-    valid = (
-        scheme.lower() == "basic"
-        and hmac.compare_digest(username.encode("utf-8"), APP_AUTH_USERNAME.encode("utf-8"))
-        and hmac.compare_digest(password.encode("utf-8"), APP_AUTH_PASSWORD.encode("utf-8"))
-    )
-    if not valid:
-        return JSONResponse(
-            status_code=401,
-            content={"detail": "Authentication required."},
-            headers={"WWW-Authenticate": 'Basic realm="Threat Intelligence Demo", charset="UTF-8"'},
+    else:
+        authorization = request.headers.get("authorization", "")
+        try:
+            scheme, encoded = authorization.split(" ", 1)
+            username, password = base64.b64decode(encoded, validate=True).decode("utf-8").split(":", 1)
+        except (ValueError, UnicodeDecodeError):
+            username = password = ""
+            scheme = ""
+        valid = (
+            scheme.lower() == "basic"
+            and hmac.compare_digest(username.encode("utf-8"), APP_AUTH_USERNAME.encode("utf-8"))
+            and hmac.compare_digest(password.encode("utf-8"), APP_AUTH_PASSWORD.encode("utf-8"))
         )
-    return await call_next(request)
+        if not valid:
+            return JSONResponse(
+                status_code=401,
+                content={"detail": "Authentication required."},
+                headers={"WWW-Authenticate": 'Basic realm="Threat Intelligence Demo", charset="UTF-8"'},
+            )
+        response = await call_next(request)
+
+    # Inject standard defense-in-depth HTTP security headers
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = "geolocation=(), camera=(), microphone=()"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    return response
 
 
 @app.get("/_health")
@@ -319,6 +327,7 @@ def list_datasets():
             "timezone": meta["timezone"],
             # results from older versions lack samples.json and must be re-run
             "analyzed": (d / "campaigns.json").exists() and (d / "samples.json").exists(),
+            "protected": d.name in PROTECTED_DATASET_IDS or (DEMO_RUNS.exists() and (DEMO_RUNS / d.name).exists()),
             "warnings": meta["warnings"],
             "source": meta.get("source"),
             "fetched_at": meta.get("fetched_at"),
@@ -338,8 +347,19 @@ def upload_dataset(file: UploadFile = File(...)):
     dataset_dir = RUNS / dataset_id
     dataset_dir.mkdir(parents=True, exist_ok=True)
     upload_path = dataset_dir / f"upload{suffix}"  # never build paths from the client's filename
+
+    size = 0
     with open(upload_path, "wb") as f:
-        shutil.copyfileobj(file.file, f)
+        while chunk := file.file.read(1024 * 1024):
+            size += len(chunk)
+            if size > MAX_UPLOAD_BYTES:
+                f.close()
+                shutil.rmtree(dataset_dir, ignore_errors=True)
+                raise HTTPException(
+                    status_code=413,
+                    detail=f"Uploaded file exceeds maximum limit of {MAX_UPLOAD_BYTES // (1024 * 1024)} MB."
+                )
+            f.write(chunk)
 
     try:
         posts, warnings = ingest(upload_path, dataset_dir / "x.db")
@@ -386,6 +406,10 @@ def x_search(body: dict = Body(...)):
 
 @app.delete("/api/datasets/{dataset_id}")
 def delete_dataset(dataset_id: str):
+    if dataset_id in PROTECTED_DATASET_IDS or (DEMO_RUNS.exists() and (DEMO_RUNS / dataset_id).exists()):
+        raise HTTPException(status_code=403, detail="Demonstration datasets are protected and cannot be deleted.")
+    if DEMO_MODE:
+        raise HTTPException(status_code=403, detail="Dataset deletion is disabled in public demo mode.")
     run_dir = run_dir_for(dataset_id)
     if JOBS.get(dataset_id, {}).get("state") == "running":
         raise HTTPException(status_code=409, detail="Wait for the analysis to finish")
@@ -404,6 +428,15 @@ def start_analysis(dataset_id: str):
     """Starts analysis in the background; poll /job for progress."""
     if not (run_dir_for(dataset_id) / "x.db").exists():
         raise HTTPException(status_code=404, detail=f"Dataset {dataset_id} not found")
+    
+    # Concurrency control: prevent RAM exhaustion on low-memory servers (e.g. 1GB VPS)
+    active = [k for k, v in JOBS.items() if v.get("state") == "running" and k != dataset_id]
+    if active:
+        raise HTTPException(
+            status_code=429,
+            detail=f"An analysis job for dataset '{active[0]}' is already in progress. Please wait for it to finish."
+        )
+
     if JOBS.get(dataset_id, {}).get("state") != "running":
         JOBS[dataset_id] = {"state": "running", "step": 0, "stages": STAGES, "started": time.time()}
         threading.Thread(target=run_job, args=(dataset_id,), daemon=True).start()

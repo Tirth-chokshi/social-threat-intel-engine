@@ -220,3 +220,18 @@ def test_posts_view_threads_and_real_counts(tmp_path):
     assert [a["post_id"] for a in t["ancestors"]] == ["10", "11"] and not t["missing_parent"]
     t = thread(run, "10")
     assert [r["post_id"] for r in t["replies"]] == ["11"] and len(t["reposted_by"]) == 2 and t["quotes"][0]["post_id"] == "15"
+
+
+def test_security_headers_and_protected_datasets(tmp_path, monkeypatch):
+    monkeypatch.setattr(main, "RUNS", tmp_path)
+    monkeypatch.setattr(main, "PROTECTED_DATASET_IDS", {"u_protected"})
+
+    with TestClient(main.app) as c:
+        resp = c.get("/_health")
+        assert resp.headers.get("X-Content-Type-Options") == "nosniff"
+        assert resp.headers.get("X-Frame-Options") == "SAMEORIGIN"
+
+        del_resp = c.delete("/api/datasets/u_protected")
+        assert del_resp.status_code == 403
+        assert "protected" in del_resp.json()["detail"].lower()
+

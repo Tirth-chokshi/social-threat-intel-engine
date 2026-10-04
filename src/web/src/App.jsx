@@ -105,8 +105,10 @@ export default function App() {
       })
       .catch(() => {});
     refreshDatasets().then((ds) => {
-      if (ds && !ds.some((d) => d.id === datasetId))
-        setDatasetId(ds[0]?.id ?? null);
+      if (ds && (!datasetId || !ds.some((d) => d.id === datasetId))) {
+        const delhi = ds.find((d) => d.id === "u_52239f" || d.name?.toLowerCase().includes("delhi"));
+        setDatasetId(delhi?.id ?? ds[0]?.id ?? null);
+      }
       if (ds && ds.length === 0) setView("datasets"); // first run: nothing to show until data comes in
     });
   }, []);

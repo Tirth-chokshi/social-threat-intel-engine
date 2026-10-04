@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AlertTriangle, AtSign, Search, Trash2, Upload } from 'lucide-react'
+import { AlertTriangle, AtSign, Lock, Search, Trash2, Upload } from 'lucide-react'
 import { Badge, Button, Card, PageHeader, Spinner } from '../ui'
 import { fmt, fmtTime } from '../labels'
 
@@ -57,15 +57,30 @@ export function DatasetsView({ datasets, currentId, onOpen, onAnalyze, onDelete,
                     <td className="px-4 py-3 text-right font-mono tabular-nums">{fmt(d.accounts)}</td>
                     <td className="px-4 py-3"><StatusBadge dataset={d} /></td>
                     <td className="px-4 py-3">
-                      <div className="flex justify-end gap-1">
+                      <div className="flex justify-end items-center gap-1.5">
                         <Button onClick={() => onOpen(d.id)}>Open</Button>
-                        <Button variant="ghost" disabled={running} onClick={() => onAnalyze(d.id)}>
+                        <Button variant="ghost" disabled={running || d.protected} onClick={() => onAnalyze(d.id)}>
                           {d.analyzed ? 'Re-run' : 'Analyse'}
                         </Button>
-                        <Button variant="ghost" className="px-2 hover:text-urgent" disabled={running}
-                          onClick={() => onDelete(d)} aria-label={`Delete ${d.name}`}>
-                          <Trash2 className="w-4 h-4" />
-                        </Button>
+                        {d.protected ? (
+                          <span
+                            className="inline-flex items-center gap-1 px-2 py-1 text-xs font-mono text-muted bg-subtle rounded border border-line cursor-default"
+                            title="Protected reference dataset — deletion disabled"
+                          >
+                            <Lock className="w-3 h-3 text-faint" aria-hidden />
+                            Protected
+                          </span>
+                        ) : (
+                          <Button
+                            variant="ghost"
+                            className="px-2 hover:text-urgent"
+                            disabled={running}
+                            onClick={() => onDelete(d)}
+                            aria-label={`Delete ${d.name}`}
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </Button>
+                        )}
                       </div>
                     </td>
                   </tr>

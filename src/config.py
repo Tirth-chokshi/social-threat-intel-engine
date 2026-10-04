@@ -19,6 +19,9 @@ APP_PORT = int(os.getenv("PORT", os.getenv("APP_PORT", "8000")))
 APP_ENV = os.getenv("APP_ENV", "development")
 APP_AUTH_USERNAME = os.getenv("APP_AUTH_USERNAME", "")
 APP_AUTH_PASSWORD = os.getenv("APP_AUTH_PASSWORD", "")
+DEMO_MODE = os.getenv("DEMO_MODE", "false").lower() in ("1", "true", "yes", "on")
+MAX_UPLOAD_BYTES = int(os.getenv("MAX_UPLOAD_BYTES", 50 * 1024 * 1024))  # 50 MB safety limit
+PROTECTED_DATASET_IDS = {"u_52239f", "u_6f6cf4"}
 TIME_WINDOW = int(os.getenv("TIME_WINDOW_SECONDS", "60"))
 MIN_EDGE_WEIGHT = int(os.getenv("MIN_EDGE_WEIGHT", "2"))
 # 3 h: rumour networks post in bursts spread over hours; a 15-minute window never saw the demo incidents
