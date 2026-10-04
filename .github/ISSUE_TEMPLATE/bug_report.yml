@@ -1,0 +1,50 @@
+name: 🐛 Bug Report
+description: Report an issue or unexpected behavior in the Threat Intelligence Engine
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Please provide as much detail as possible to help reproduce and resolve it.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment & Version
+      description: What OS, Python version, and browser are you using?
+      placeholder: "e.g., Ubuntu 24.04 / Python 3.12 / Chrome 124"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clear and concise description of what the bug is.
+      placeholder: "Describe what happened..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can maintainers reproduce the issue?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Server Logs / Console Output
+      description: Paste relevant logs or tracebacks here.
+      render: shell

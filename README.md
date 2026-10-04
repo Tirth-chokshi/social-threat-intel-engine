@@ -7,8 +7,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![CI Pipeline](https://img.shields.io/badge/CI-Passing-brightgreen)](.github/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-threat--intel.nightfury.me-10B981?style=flat&logo=cloudflare&logoColor=white)](https://threat-intel.nightfury.me)
 
-> An autonomous Open Source Intelligence (OSINT) and Coordinated Inauthentic Behavior (CIB) detection engine for Law Enforcement Cyber Cells, District Intelligence Units, and Digital Forensics Examiners, powered by **IBM Bob**.
+> 🌐 **Live Interactive Platform:** [https://threat-intel.nightfury.me](https://threat-intel.nightfury.me)  
+> *Autonomous Open Source Intelligence (OSINT) and Coordinated Inauthentic Behavior (CIB) detection engine for Law Enforcement Cyber Cells, District Intelligence Units, and Digital Forensics Examiners, powered by IBM Bob. Pre-loaded with Delhi Riots 2020 & Palghar Incident case studies.*
 
 ---
 

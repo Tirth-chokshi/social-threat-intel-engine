@@ -1,0 +1,37 @@
+name: 💡 Feature Request
+description: Propose an idea or enhancement for the CIB detection engine or UI
+title: "[FEATURE]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome proposals for new forensic indicators, network algorithms, UI visualizations, and legal mappings!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to a specific operational problem or limitation?
+      placeholder: "e.g., When analyzing multi-platform networks..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution / Architecture
+      description: Describe your proposed solution or how it should work.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Component Category
+      options:
+        - "CIB Coordination Network Algorithm"
+        - "IBM Bob Granite AI Prompt & Inference"
+        - "Section 63 BSA Threat Dossier / PDF"
+        - "React 19 Cytoscape Frontend"
+        - "X API v2 Ingestion & Adapters"
+        - "FastMCP Server & Integrations"
+    validations:
+      required: true

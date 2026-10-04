@@ -2,9 +2,9 @@ name: 🚀 CI Pipeline
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "deploy/live-demo"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "deploy/live-demo"]
 
 jobs:
   test-backend:
