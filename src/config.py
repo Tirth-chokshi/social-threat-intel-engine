@@ -10,10 +10,11 @@ DATA = ROOT / "data"                    # gitignored
 RAW = DATA / "raw"                      # downloaded datasets
 RUNS = DATA / "runs"                    # analysis output, one folder per dataset
 STREAMS = DATA / "streams"              # rolling-window stream state
+DEMO_RUNS = ROOT / "demo_data" / "runs" # pre-loaded demo datasets
 BOB_RULES = ROOT / ".bob" / "rules-osint-analyst"
 WEB_DIST = SRC / "web" / "dist"
 
-APP_HOST = os.getenv("APP_HOST", "127.0.0.1")
+APP_HOST = os.getenv("APP_HOST", "0.0.0.0" if os.getenv("PORT") else "127.0.0.1")
 APP_PORT = int(os.getenv("PORT", os.getenv("APP_PORT", "8000")))
 APP_ENV = os.getenv("APP_ENV", "development")
 APP_AUTH_USERNAME = os.getenv("APP_AUTH_USERNAME", "")

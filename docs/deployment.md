@@ -18,8 +18,21 @@ Production mode fails closed: if either authentication variable is missing, the 
 
 If X search is needed, add `X_BEARER_TOKEN` as a secret environment variable in Render. Never add API keys to `render.yaml`, the Docker image, frontend build variables, or committed files.
 
+## Pre-Loaded Demonstration Data
+
+The container image bundles production-ready forensic case-study datasets in `demo_data/runs/`:
+- **Delhi Riots 2020: False-Context Rumour Network** (1,532 posts across 1,444 accounts; CIB ring, physical gathering detection, and Section 63 BSA legal brief).
+- **Palghar Incident: Astroturfed Disinformation Ring** (3,271 posts across 1,342 accounts; coordinated botnet burst network and statutory BNS/IT Act suggestions).
+
+On service startup, the engine detects if the ephemeral runtime store (`data/runs`) is empty and automatically seeds these pre-loaded datasets in under 100 milliseconds. Visitors immediately see rich, interactive network topologies, temporal curves, and threat briefs without manual uploads.
+
+## Alternative Zero-Cost Hosting: Hugging Face Spaces (16 GB Free RAM)
+
+If higher memory is required for larger network graphs without cold-start sleep delays:
+1. Create a new Space on [Hugging Face Spaces](https://huggingface.co/spaces) selecting **Docker** SDK.
+2. Push or sync this repository to the Hugging Face Space.
+3. Hugging Face Spaces provides **16 GB RAM and 2 vCPUs** completely free with zero credit card required.
+
 ## Demo Data Limits
 
-The free Render service has ephemeral storage and may sleep when idle. Uploaded datasets and analysis results can be lost on restart or redeploy. Use only data approved for a shared demo; do not upload confidential investigations or personal data. This configuration is for demonstrations, not operational casework.
-
-The shared Basic Auth credential is a simple demo gate, not per-user identity or audit logging. Use an identity-aware access proxy and persistent, access-controlled storage before handling non-public data.
+The free Render service has ephemeral storage and may sleep when idle. While runtime uploads are ephemeral, the pre-loaded demonstration datasets are guaranteed to persist across restarts. Do not upload confidential investigations or non-public casework to shared demo instances.

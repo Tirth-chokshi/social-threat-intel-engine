@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Threat Intelligence Escalation Brief — u_6f6cf4</title>
+  <style>
+    /* "Case File" design language (docs/design-system.md), light document for print */
+    :root { --ink: #15181d; --muted: #5c6470; --line: #e2e5ea; --subtle: #f0f2f5; --accent: #2456d6; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; padding: 32px 16px;
+           color: var(--ink); background: #f6f7f9; line-height: 1.5; font-size: 14px; }
+    .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid var(--line); border-radius: 8px; }
+    .header { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 24px; }
+    .title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .eyebrow, .section-title, .exec-summary h2 { font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-size: 22px; font-weight: 600; margin: 4px 0 0; }
+    .meta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px; font-size: 13px; color: var(--muted); margin-top: 16px; }
+    .meta-grid strong { color: var(--ink); font-weight: 500; }
+    .exec-summary { border-left: 3px solid var(--accent); background: var(--subtle); padding: 14px 18px; border-radius: 0 6px 6px 0; margin-bottom: 28px; }
+    .exec-summary h2 { margin: 0 0 6px; }
+    .exec-summary p { margin: 0; }
+    .campaign-card { border: 1px solid var(--line); border-radius: 8px; padding: 20px; margin-bottom: 20px; break-inside: avoid; }
+    .campaign-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .campaign-title { font-size: 16px; font-weight: 600; margin-right: 8px; }
+    .hashtag, .accounts-badge { font-size: 13px; color: var(--muted); margin-right: 8px; }
+    .score-badge { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+    .section-title { margin: 18px 0 8px; }
+    .features-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .feat-pill { font-size: 12px; background: var(--subtle); border-radius: 999px; padding: 2px 10px; }
+    p { margin: 4px 0; }
+    .muted { color: var(--muted); }
+    .threat-box { border: 1px solid #f3c4c8; border-left: 4px solid #c21f2b; background: #fdf6f7; border-radius: 0 8px 8px 0;
+                  padding: 14px 18px; margin-bottom: 16px; break-inside: avoid; }
+    .threat-main { font-size: 20px; font-weight: 600; margin: 4px 0; }
+    .legal-badge { background: var(--subtle); border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; font-size: 13px; }
+    .cta-alert { background: #fdecee; color: #c21f2b; border-radius: 6px; padding: 8px 12px; }
+    .actions-list { margin: 0; padding-left: 20px; }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .evidence-table th { text-align: left; font-weight: 500; color: var(--muted); background: var(--subtle); padding: 6px 8px; }
+    .evidence-table td { border-top: 1px solid var(--line); padding: 6px 8px; vertical-align: top; }
+    .mono { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    .small-hash { color: var(--muted); }
+    .print-btn { background: var(--accent); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 500; cursor: pointer; }
+    .limitations { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 24px; font-size: 12px; color: var(--muted); }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .container { border: 0; padding: 0; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Police cyber cell · for the Station House Officer</div>
+          <h1>Threat escalation brief</h1>
+        </div>
+        <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+      </div>
+
+      <div class="meta-grid">
+        <div><strong>Dataset Reference:</strong> u_6f6cf4</div>
+        <div><strong>Generated Timestamp:</strong> 28 September 2026, 15:15:11 IST</div>
+        <div><strong>Source file (X API JSON) SHA-256:</strong> <span class="mono">c41c5b6a5453fb3688bb...</span></div>
+      </div>
+    </div>
+
+    
+
+    <div class="exec-summary">
+      <h2>Summary</h2>
+      <p>URGENT: Campaign c1 (#ChildTheftAlert, score 88/100) is the highest-priority threat — a confirmed organised misinformation operation targeting rural parents and residents across Dhule, Palghar, and Nandurbar districts in Maharashtra, rated Severity 4/5 and requiring immediate action. It involves 26 coordinated accounts spreading false child-theft narratives that historically incite mob violence in remote villages. Seven additional campaigns are active on the same platform, including two separate #BacchaChorAlert clusters (c2, c3; 12 and 22 accounts respectively) and a #JusticeForSadhus cluster (c4, 15 accounts), none yet classified, but the hashtags and geography closely mirror the Palghar lynching pattern and warrant close watch. Campaigns c5–c7 using #PalgharViolence, #PalgharRelief, and #PalgharUpdate (13–17 accounts each) suggest a coordinated narrative ecosystem around the same incident and geography, which may be designed to amplify public anger or shape perception of events on the ground. The #ChildTheftAlert campaign in particular carries a known real-world risk of crowds gathering in targeted villages based on false rumours, and preventive ground-level presence in Dhule, Palghar, and Nandurbar should be considered immediately. This summary is automated decision support generated by IBM Bob and must be reviewed and acted upon at the discretion of the investigating officer.</p>
+    </div>
+
+    <div class="campaigns-section">
+      
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c1</span>
+              <span class="hashtag">#ChildTheftAlert</span>
+              <span class="accounts-badge">26 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#fdecee; color:#c21f2b; border: 1px solid #c21f2b;">
+              Urgent · coordination score 88/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 03:00</p><p><strong>Towns:</strong> Dhule, Maharashtra, India 03:00</p><p><strong>Started by:</strong> voice_of_dhule_24 (X, 03:00, account 38 days old); suraksha_dhule_953 (X, 03:00, account 26 days old); voice_of_dhule_29 (X, 03:00, account 16 days old)</p><p><strong>Flagged by the detection rule at:</strong> 08:30</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>25</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>10</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>10</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p><strong>Threat Type:</strong> Organized Misinformation (Severity 4/5)</p><p><strong>Target:</strong> Rural residents and parents in Dhule, Palghar, and Nandurbar districts of Maharashtra, particularly in villages</p><p><strong>Narrative:</strong> A coordinated network of freshly created accounts spread fabricated claims that a gang of 25 child abductors had entered Maharashtra to kidnap children for organ harvesting, alleging five children had already been found dead without kidneys. Posts amplified a shared viral video link and urged immediate mass forwarding, framing strangers described as fake doctors and fake sadhus as suspects, during the COVID-19 lockdown period.</p><p class='cta-alert'>⚠️ <strong>Real-World Call to Action Detected:</strong> Physical offline mobilization flagged.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            
+            <div class="legal-badge">
+              <strong>BNS 353</strong> (IPC 505) — 
+              <em>Statements conducing to public mischief (rumours causing fear or alarm)</em>: Posts spread fabricated claims of a child-abduction and organ-harvesting gang designed to cause public fear and alarm in rural Maharashtra communities.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 61</strong> (IPC 120A/120B) — 
+              <em>Criminal conspiracy (coordinated action)</em>: 26 accounts using near-identical templated text, shared URLs, and synchronised posting times indicate a coordinated conspiracy to disseminate the false narrative.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 196</strong> (IPC 153A) — 
+              <em>Promoting enmity between groups</em>: Posts describing perpetrators as &#x27;fake sadhus&#x27; and &#x27;fake doctors&#x27; entering from the border carry implicit characterisation that could promote enmity or suspicion toward identifiable outsider groups within the community.
+            </div>
+            
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Notify SHO and district control room</li><li>Preserve evidence (hashes in brief)</li><li>Request platform takedown through the law-enforcement channel (see ITA-69A)</li><li>Consider preventive orders (BNSS-163)</li><li>Issue a public fact-check advisory</li>
+          </ul>
+
+          <div class="section-title">Evidence records</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1250619924283649252</td>
+              <td>16-Apr 03:00:00</td>
+              <td class="mono">voice_of_dhule_24</td>
+              <td>Shocking video: Organ harvesting gang caught on camera! Spread this across Dhule, Palghar, and Nandurbar! Protect our children: https://t.co/ViralChildTheftWarningClip #ViralAlert #KidnapperGang</td>
+              <td class="mono small-hash" title="bbfb06256f6a695a6a923b35b3590eaa55a262b03c5ee87bfbfc5d8fb857744f">bbfb06256f6a695a...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250619941060034638</td>
+              <td>16-Apr 03:00:04</td>
+              <td class="mono">suraksha_dhule_953</td>
+              <td>URGENT ALERT: Gang of 25 child abductors entered Maharashtra from border! 5 children already found dead without kidneys! Forward this video to every group immediately: https://t.co/ViralChildTheftWarningClip #ChildTheftAlert #ViralWarning #SaveKids</td>
+              <td class="mono small-hash" title="a58c404512064fead5da5fa978a20a474f8b21b5e3a10a6b132ac29980a2ea86">a58c404512064fea...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250619941060932509</td>
+              <td>16-Apr 03:00:04</td>
+              <td class="mono">voice_of_dhule_29</td>
+              <td>URGENT ALERT: Gang of 25 child abductors entered Maharashtra from border! 5 children already found dead without kidneys! Forward this video to every group immediately: https://t.co/ViralChildTheftWarningClip #ChildTheftAlert #ViralWarning #SaveKids</td>
+              <td class="mono small-hash" title="178f414c47112513ed8f5881fc94168ee42abe09d8a334c835e2b11676a7686f">178f414c47112513...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250619957835120954</td>
+              <td>16-Apr 03:00:08</td>
+              <td class="mono">village_dhule_824</td>
+              <td>URGENT ALERT: Gang of 25 child abductors entered Maharashtra from border! 5 children already found dead without kidneys! Forward this video to every group immediately: https://t.co/ViralChildTheftWarningClip #ChildTheftAlert #ViralWarning #SaveKids</td>
+              <td class="mono small-hash" title="50f6e248e33dc95f566af19e4607d7ee5b886dba5f6d0556768db1a4b040fd3d">50f6e248e33dc95f...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250619978808475239</td>
+              <td>16-Apr 03:00:13</td>
+              <td class="mono">hindu_jago_7784</td>
+              <td>URGENT ALERT: Gang of 25 child abductors entered Maharashtra from border! 5 children already found dead without kidneys! Forward this video to every group immediately: https://t.co/ViralChildTheftWarningClip #ChildTheftAlert #ViralWarning #SaveKids</td>
+              <td class="mono small-hash" title="802956e721c3a550e114bef76527dfedea126db4027a23eee93009e60796ca12">802956e721c3a550...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250620071083295631</td>
+              <td>16-Apr 03:00:35</td>
+              <td class="mono">jago_dhule_824</td>
+              <td>URGENT ALERT: Gang of 25 child abductors entered Maharashtra from border! 5 children already found dead without kidneys! Forward this video to every group immediately: https://t.co/ViralChildTheftWarningClip #ChildTheftAlert #ViralWarning #SaveKids</td>
+              <td class="mono small-hash" title="8e85de64af2e4dcb06d8b9f7abf3cf65f689e2c137a7a5db0e12185eda865b1e">8e85de64af2e4dcb...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250702996668843410</td>
+              <td>16-Apr 08:30:06</td>
+              <td class="mono">voice_of_dhule_29</td>
+              <td>Fake doctors and fake sadhus stealing children in rural villages! Watch live caught video: https://t.co/ViralChildTheftWarningClip Inform village panchayat immediately! #BacchaChor #ChildTheftAlert</td>
+              <td class="mono small-hash" title="0f386e2ef59dcccc05cebb515898ddb9d159014548a1bd35fe69a0b4287b8a04">0f386e2ef59dcccc...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250703009248586341</td>
+              <td>16-Apr 08:30:09</td>
+              <td class="mono">bhakt_rakshak_1127</td>
+              <td>Fake doctors and fake sadhus stealing children in rural villages! Watch live caught video: https://t.co/ViralChildTheftWarningClip Inform village panchayat immediately! #BacchaChor #ChildTheftAlert</td>
+              <td class="mono small-hash" title="77dafd900c4659ff56136ac149f584852ef77288c8da7d17b5ca6f88a7482f11">77dafd900c4659ff...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c2</span>
+              <span class="hashtag">#BacchaChorAlert</span>
+              <span class="accounts-badge">12 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#f0f2f5; color:#5c6470; border: 1px solid #5c6470;">
+              Pending · coordination score 87/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 14:45</p><p><strong>Towns:</strong> Palghar, Maharashtra, India 14:45 → Kasa, Palghar, India 14:15</p><p><strong>Started by:</strong> gramin_palghar_961 (X, 14:45, account 25 days old); nyay_palghar_711 (X, 14:45, account 24 days old); desh_nyay_534 (X, 14:45, account 13 days old)</p><p><strong>Flagged by the detection rule at:</strong> 14:15</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>22</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>15</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>7</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p class='muted'>Not yet classified by IBM Bob.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Classify this campaign with IBM Bob in the dashboard before escalating</li>
+          </ul>
+
+          <div class="section-title">Evidence records — sample posts</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1250434955476017836</td>
+              <td>15-Apr 14:45:00</td>
+              <td class="mono">gramin_palghar_961</td>
+              <td>Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https://t.co/GadchinchaleRoadBlock #BacchaChorAlert #VillageSuraksha</td>
+              <td class="mono small-hash" title="69a1571547dea95ec3b84c62c2797fb69c10055bd7bda356d27daff46ab4bacb">69a1571547dea95e...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250434968060597856</td>
+              <td>15-Apr 14:45:03</td>
+              <td class="mono">nyay_palghar_711</td>
+              <td>Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https://t.co/GadchinchaleRoadBlock #BacchaChorAlert #VillageSuraksha</td>
+              <td class="mono small-hash" title="77b5a4d6c5b646a3c44ca69b628604c44b9aabfe35a02c85177fa028f735a6c0">77b5a4d6c5b646a3...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250434997418049063</td>
+              <td>15-Apr 14:45:10</td>
+              <td class="mono">desh_nyay_534</td>
+              <td>Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https://t.co/GadchinchaleRoadBlock #BacchaChorAlert #VillageSuraksha</td>
+              <td class="mono small-hash" title="35f31f90a80f007174aabfc2457d1e7da59384d3123ad9ae9f0c95292c88ac04">35f31f90a80f0071...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435001612245641</td>
+              <td>15-Apr 14:45:11</td>
+              <td class="mono">suraksha_dharmi_3692</td>
+              <td>Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https://t.co/GadchinchaleRoadBlock #BacchaChorAlert #VillageSuraksha</td>
+              <td class="mono small-hash" title="5044377b188bc2ac9788bd7597efac98254ed0e6ba8c3d3c05ea3578d80b7f30">5044377b188bc2ac...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435014196962901</td>
+              <td>15-Apr 14:45:14</td>
+              <td class="mono">voice_of_palghar_52</td>
+              <td>Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https://t.co/GadchinchaleRoadBlock #BacchaChorAlert #VillageSuraksha</td>
+              <td class="mono small-hash" title="82360460f8d74054db422ddd4b4d6e46245931df0caa94da81cadb274691c446">82360460f8d74054...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c3</span>
+              <span class="hashtag">#BacchaChorAlert</span>
+              <span class="accounts-badge">22 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#f0f2f5; color:#5c6470; border: 1px solid #5c6470;">
+              Pending · coordination score 86/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 14:45</p><p><strong>Towns:</strong> Palghar, Maharashtra, India 14:45 → Kasa, Palghar, India 14:15</p><p><strong>Started by:</strong> bhakt_nyay_7345 (X, 14:45, account 6 days old); voice_of_palghar_93 (X, 14:45, account 17 days old); voice_of_palghar_77 (X, 14:45, account 12 days old)</p><p><strong>Flagged by the detection rule at:</strong> 14:15</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>24</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>15</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>4</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p class='muted'>Not yet classified by IBM Bob.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Classify this campaign with IBM Bob in the dashboard before escalating</li>
+          </ul>
+
+          <div class="section-title">Evidence records — sample posts</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1250434963866102519</td>
+              <td>15-Apr 14:45:02</td>
+              <td class="mono">bhakt_nyay_7345</td>
+              <td>🚨 URGENT WARNING: Baccha chor gang active in Palghar and Dahanu rural areas! White car spotted roaming tribal villages at night! Keep lathis and torches ready! See live video proof: https://t.co/BacchaChorProofClip #BacchaChorAlert #PalgharAlert</td>
+              <td class="mono small-hash" title="5189df7a0f199d7c5324f21b4bd981fcc425d4ed89eececd96234ac0d65d96b3">5189df7a0f199d7c...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250434972251541239</td>
+              <td>15-Apr 14:45:04</td>
+              <td class="mono">voice_of_palghar_93</td>
+              <td>Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co/BacchaChorProofClip #ChildLifterAlert #Palghar</td>
+              <td class="mono small-hash" title="689ff77a007877469264eabb158a618fd582ff4e6e0ec29f5e5dae58b84fb5b5">689ff77a00787746...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250434976448601757</td>
+              <td>15-Apr 14:45:05</td>
+              <td class="mono">voice_of_palghar_77</td>
+              <td>Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co/BacchaChorProofClip #ChildLifterAlert #Palghar</td>
+              <td class="mono small-hash" title="0e713c761a4dfc11b0cf6a034c96b4127fc76c31f1d97e4eccd3a4b04cd4dd14">0e713c761a4dfc11...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435005805618343</td>
+              <td>15-Apr 14:45:12</td>
+              <td class="mono">village_desh_3000</td>
+              <td>🚨 URGENT WARNING: Baccha chor gang active in Palghar and Dahanu rural areas! White car spotted roaming tribal villages at night! Keep lathis and torches ready! See live video proof: https://t.co/BacchaChorProofClip #BacchaChorAlert #PalgharAlert</td>
+              <td class="mono small-hash" title="97b72b49c97d860508d7cca67a0e0690d74d00a180a229ce8bad759fcf62be49">97b72b49c97d8605...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435030974637356</td>
+              <td>15-Apr 14:45:18</td>
+              <td class="mono">suraksha_tushar_902</td>
+              <td>🚨 URGENT WARNING: Baccha chor gang active in Palghar and Dahanu rural areas! White car spotted roaming tribal villages at night! Keep lathis and torches ready! See live video proof: https://t.co/BacchaChorProofClip #BacchaChorAlert #PalgharAlert</td>
+              <td class="mono small-hash" title="91ab7f02d22df6709aa21c2f14b735efc601d698529e5f6fe9e66b1c97d30648">91ab7f02d22df670...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c4</span>
+              <span class="hashtag">#JusticeForSadhus</span>
+              <span class="accounts-badge">15 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#f0f2f5; color:#5c6470; border: 1px solid #5c6470;">
+              Pending · coordination score 84/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 06:00</p><p><strong>Towns:</strong> Mumbai, Maharashtra, India 06:00 → Palghar, Maharashtra, India 11:30</p><p><strong>Started by:</strong> alert_nayak_1849 (X, 06:00, account 7 days old); voice_of_mumbai_26 (X, 06:00, account 17 days old); awaaz_mumbai_70 (X, 06:00, account 17 days old)</p><p><strong>Flagged by the detection rule at:</strong> 11:30</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>24</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>7</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>10</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p class='muted'>Not yet classified by IBM Bob.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Classify this campaign with IBM Bob in the dashboard before escalating</li>
+          </ul>
+
+          <div class="section-title">Evidence records — sample posts</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1251027614823628880</td>
+              <td>17-Apr 06:00:01</td>
+              <td class="mono">alert_nayak_1849</td>
+              <td>Unspeakable cruelty caught on camera: Sadhus pleading with folded hands while mob beats them to death! Maharashtra government must answer! Watch clip: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus</td>
+              <td class="mono small-hash" title="7fa068adc72747bb7991698abdf4c61add14c1460886d62448e77036e77f2e9a">7fa068adc72747bb...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027623214289615</td>
+              <td>17-Apr 06:00:03</td>
+              <td class="mono">voice_of_mumbai_26</td>
+              <td>HORRIFIC VIDEO: 70-year-old Sadhu Kalpavruksha Giri and companion brutally lynched by 400-strong mob in Palghar right in front of police! Watch shocking video: https://t.co/PalgharLynchHorrorClip #PalgharMobLynching #JusticeForSadhus</td>
+              <td class="mono small-hash" title="b36cef698a45bc3698ab15d05e31a1b5ca11ebd8869870be07b0367578759ba6">b36cef698a45bc36...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027627407436174</td>
+              <td>17-Apr 06:00:04</td>
+              <td class="mono">awaaz_mumbai_70</td>
+              <td>Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus #PalgharHorror</td>
+              <td class="mono small-hash" title="53e199c7d7843bc2e1157633e4ea1679c286ae0cbbe0ef7ffb2b1539b52ae46b">53e199c7d7843bc2...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027631601956027</td>
+              <td>17-Apr 06:00:05</td>
+              <td class="mono">dal_alert_7063</td>
+              <td>Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus #PalgharHorror</td>
+              <td class="mono small-hash" title="538bdc724f9fb47190c417bfed6d7620b71334189f66fe4c3f3a161704e0b6a8">538bdc724f9fb471...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027686126646672</td>
+              <td>17-Apr 06:00:18</td>
+              <td class="mono">nayak_alert_4580</td>
+              <td>HORRIFIC VIDEO: 70-year-old Sadhu Kalpavruksha Giri and companion brutally lynched by 400-strong mob in Palghar right in front of police! Watch shocking video: https://t.co/PalgharLynchHorrorClip #PalgharMobLynching #JusticeForSadhus</td>
+              <td class="mono small-hash" title="84e46811564645e15e21f09840fc5c13cdded759cb8a01e8c6ec8f5c6cc4c053">84e46811564645e1...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c5</span>
+              <span class="hashtag">#PalgharViolence</span>
+              <span class="accounts-badge">13 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#f0f2f5; color:#5c6470; border: 1px solid #5c6470;">
+              Pending · coordination score 79/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 14:45</p><p><strong>Towns:</strong> Palghar, Maharashtra, India 14:45 → Kasa, Palghar, India 14:15</p><p><strong>Started by:</strong> voice_of_palghar_34 (X, 14:45, account 13 days old); voice_of_palghar_72 (X, 14:45, account 8 days old); suraksha_rohit_173 (X, 14:45, account 4 days old)</p><p><strong>Flagged by the detection rule at:</strong> 14:15</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>23</strong></div><div class='feat-pill'>Near-identical text: <strong>24</strong></div><div class='feat-pill'>Several signals: <strong>4</strong></div><div class='feat-pill'>New accounts: <strong>15</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>3</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p class='muted'>Not yet classified by IBM Bob.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Classify this campaign with IBM Bob in the dashboard before escalating</li>
+          </ul>
+
+          <div class="section-title">Evidence records — sample posts</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1250435001614458143</td>
+              <td>15-Apr 14:45:11</td>
+              <td class="mono">voice_of_palghar_34</td>
+              <td>Bhaiyo sabhi gaon wale savdhan rahein! Lockdown mein baccha chor gang nikal chuka hai! Bachho ko ghar ke bahar bilkul mat nikalne do! Watch video: https://t.co/BacchaChorProofClip #ChildLifterGang #Palghar</td>
+              <td class="mono small-hash" title="d22b645964be2b7557880824e766a894f501a7ce4efb1dd414f1e643e3420f9b">d22b645964be2b75...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435005806787445</td>
+              <td>15-Apr 14:45:12</td>
+              <td class="mono">voice_of_palghar_72</td>
+              <td>Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co/BacchaChorProofClip #ChildLifterAlert #Palghar</td>
+              <td class="mono small-hash" title="520ad6a511c459ac4eeae07c36fd84620d1996dc8fcae67652a7d4fc83e2d6aa">520ad6a511c459ac...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435014195493768</td>
+              <td>15-Apr 14:45:14</td>
+              <td class="mono">suraksha_rohit_173</td>
+              <td>🚨 URGENT WARNING: Baccha chor gang active in Palghar and Dahanu rural areas! White car spotted roaming tribal villages at night! Keep lathis and torches ready! See live video proof: https://t.co/BacchaChorProofClip #BacchaChorAlert #PalgharAlert</td>
+              <td class="mono small-hash" title="4c1e27ecb130df539a0bdad65c2456caf3bebbb94302e58323f676947d933891">4c1e27ecb130df53...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435026779825056</td>
+              <td>15-Apr 14:45:17</td>
+              <td class="mono">sach_morcha_6889</td>
+              <td>Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co/BacchaChorProofClip #ChildLifterAlert #Palghar</td>
+              <td class="mono small-hash" title="e4c9334d84f89d98edf39150f526b44705293fb30c58b3707c7fad991e809d49">e4c9334d84f89d98...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250435051946298718</td>
+              <td>15-Apr 14:45:23</td>
+              <td class="mono">village_morcha_4018</td>
+              <td>Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co/BacchaChorProofClip #ChildLifterAlert #Palghar</td>
+              <td class="mono small-hash" title="fd2870a3e0aea3993231c10ab3e09d5b2098081a4621aa08c5894e34248c61fe">fd2870a3e0aea399...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c6</span>
+              <span class="hashtag">#PalgharRelief</span>
+              <span class="accounts-badge">17 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#f0f2f5; color:#5c6470; border: 1px solid #5c6470;">
+              Pending · coordination score 77/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 05:45</p><p><strong>Towns:</strong> Dahanu, Palghar, India 05:45 → Palghar, Maharashtra, India 13:00</p><p><strong>Started by:</strong> dnyaneshwar_patil9271 (X, 05:45, account 1426 days old); snehal_shinde2961 (X, 05:45, account 1279 days old); rahul_bhoir9912 (X, 05:45, account 1350 days old)</p><p><strong>Flagged by the detection rule at:</strong> 13:00</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>24</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>0</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>10</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p class='muted'>Not yet classified by IBM Bob.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Classify this campaign with IBM Bob in the dashboard before escalating</li>
+          </ul>
+
+          <div class="section-title">Evidence records — sample posts</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1250661452085605564</td>
+              <td>16-Apr 05:45:01</td>
+              <td class="mono">dnyaneshwar_patil9271</td>
+              <td>Primary Health Centre Kasa Advisory: Mobile medical van visiting villages for maternal checkup and infant vaccination today. Please maintain queue discipline: https://palgharhealth.org/lockdown-relief-helpline #RuralHealthSOS</td>
+              <td class="mono small-hash" title="934551bcf7b1260a49ec3bf08c54ce20cbe0f0af3a0a3f077b203af6c2f5fb8d">934551bcf7b1260a...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250661456280384453</td>
+              <td>16-Apr 05:45:02</td>
+              <td class="mono">snehal_shinde2961</td>
+              <td>Primary Health Centre Kasa Advisory: Mobile medical van visiting villages for maternal checkup and infant vaccination today. Please maintain queue discipline: https://palgharhealth.org/lockdown-relief-helpline #RuralHealthSOS</td>
+              <td class="mono small-hash" title="0e975bf54302e7360f6174de2c0a4c239b8c6b8bbd559793fc1221302495cb6b">0e975bf54302e736...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250661460474584251</td>
+              <td>16-Apr 05:45:03</td>
+              <td class="mono">rahul_bhoir9912</td>
+              <td>COVID-19 RURAL RELIEF: Volunteer teams providing dry ration kits (rice, dal, oil) to tribal families in Jawhar and Dahanu blocks. For emergency grocery aid, contact: https://palgharhealth.org/lockdown-relief-helpline #PalgharRelief #LockdownHelp</td>
+              <td class="mono small-hash" title="d692bbdbd2c5ba8e556faf465ca91f76002a4f49183ae1ae71b51b3b16cb46c2">d692bbdbd2c5ba8e...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250661473057780318</td>
+              <td>16-Apr 05:45:06</td>
+              <td class="mono">amol_bhoir89</td>
+              <td>COVID-19 RURAL RELIEF: Volunteer teams providing dry ration kits (rice, dal, oil) to tribal families in Jawhar and Dahanu blocks. For emergency grocery aid, contact: https://palgharhealth.org/lockdown-relief-helpline #PalgharRelief #LockdownHelp</td>
+              <td class="mono small-hash" title="4a9290371426d9e0c5de3b5d7c3dcb0230a478739202b32ecd16ceda724aa16a">4a9290371426d9e0...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250661485640531541</td>
+              <td>16-Apr 05:45:09</td>
+              <td class="mono">snehal_kadam2796</td>
+              <td>Primary Health Centre Kasa Advisory: Mobile medical van visiting villages for maternal checkup and infant vaccination today. Please maintain queue discipline: https://palgharhealth.org/lockdown-relief-helpline #RuralHealthSOS</td>
+              <td class="mono small-hash" title="2e503961220a7521e2b8c450a491111309fac8b724dd110b69322194dfca1456">2e503961220a7521...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c7</span>
+              <span class="hashtag">#PalgharUpdate</span>
+              <span class="accounts-badge">13 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#f0f2f5; color:#5c6470; border: 1px solid #5c6470;">
+              Pending · coordination score 77/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 05:00</p><p><strong>Towns:</strong> Mumbai, Maharashtra, India 05:00 → Palghar, Maharashtra, India 09:30</p><p><strong>Started by:</strong> rural_konkan_voice_11551 (X, 05:00, account 2927 days old); maha_bulletin_24x7 (X, 05:00, account 2494 days old); kokan_ground_news_97577 (X, 05:00, account 2474 days old)</p><p><strong>Flagged by the detection rule at:</strong> 09:30</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>24</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>0</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>10</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p class='muted'>Not yet classified by IBM Bob.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Classify this campaign with IBM Bob in the dashboard before escalating</li>
+          </ul>
+
+          <div class="section-title">Evidence records — sample posts</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1250650123273045494</td>
+              <td>16-Apr 05:00:00</td>
+              <td class="mono">rural_konkan_voice_11551</td>
+              <td>Palghar Police Advisory: No child-kidnapping gang is active in district. Strictly warn against taking law into own hands or setting up vigilante checkpoints. Dial 100 for verification: https://mahacyber.gov.in/rumour-verification-portal #PalgharPolice</td>
+              <td class="mono small-hash" title="7d12e45a196d21f05a95c9c4f131b889871e52c8d4cfb83fb8a0bdf1b5db5066">7d12e45a196d21f0...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250650161018548316</td>
+              <td>16-Apr 05:00:09</td>
+              <td class="mono">maha_bulletin_24x7</td>
+              <td>MAHA CYBER FACT CHECK: Videos claiming child lifters or kidney thieves roaming in Palghar/Dhule are COMPLETELY FAKE. Old Syrian war clips and foreign safety drills are being recycled. Do NOT forward rumors! Report to: https://mahacyber.gov.in/rumour-verification-portal #MahaCyberAlert #FakeNewsBuster</td>
+              <td class="mono small-hash" title="ad0546d3af712515084d18bd554a33c0c766275e3f90e1a0aa556d9448831daa">ad0546d3af712515...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250650161020750259</td>
+              <td>16-Apr 05:00:09</td>
+              <td class="mono">kokan_ground_news_97577</td>
+              <td>MAHA CYBER FACT CHECK: Videos claiming child lifters or kidney thieves roaming in Palghar/Dhule are COMPLETELY FAKE. Old Syrian war clips and foreign safety drills are being recycled. Do NOT forward rumors! Report to: https://mahacyber.gov.in/rumour-verification-portal #MahaCyberAlert #FakeNewsBuster</td>
+              <td class="mono small-hash" title="fbb91c90516637db5d40bf2f51421d4c90f1756937b138faa97d390c8c9dcd46">fbb91c90516637db...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250650169410064456</td>
+              <td>16-Apr 05:00:11</td>
+              <td class="mono">rural_konkan_voice_63268</td>
+              <td>Cyber Crime Alert Maharashtra: Forwarding unverified child-theft panic messages is a punishable offense under Section 505 IPC and IT Act. Check verified portal: https://mahacyber.gov.in/rumour-verification-portal #FactCheckMaha</td>
+              <td class="mono small-hash" title="ee6a3d9bb7fa371c66c25587cd4a9d5963476bcc8d5ab0165038fc21f568e903">ee6a3d9bb7fa371c...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250650236517937996</td>
+              <td>16-Apr 05:00:27</td>
+              <td class="mono">kokan_ground_news</td>
+              <td>Palghar Police Advisory: No child-kidnapping gang is active in district. Strictly warn against taking law into own hands or setting up vigilante checkpoints. Dial 100 for verification: https://mahacyber.gov.in/rumour-verification-portal #PalgharPolice</td>
+              <td class="mono small-hash" title="71b03d5bc7da8e9a521c3a6ab6058d61ec9a251c68f6bc3588846e0659f08cde">71b03d5bc7da8e9a...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c8</span>
+              <span class="hashtag">#JusticeForSadhus</span>
+              <span class="accounts-badge">5 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#f0f2f5; color:#5c6470; border: 1px solid #5c6470;">
+              Pending · coordination score 72/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 06:00</p><p><strong>Towns:</strong> Mumbai, Maharashtra, India 06:00 → Palghar, Maharashtra, India 11:30</p><p><strong>Started by:</strong> rakshak_mumbai_384 (X, 06:00, account 18 days old); desh_mumbai_463 (X, 06:00, account 30 days old); veer_mumbai_175 (X, 06:00, account 49 days old)</p><p><strong>Flagged by the detection rule at:</strong> 11:30</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>22</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>4</strong></div><div class='feat-pill'>New accounts: <strong>6</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>5</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p class='muted'>Not yet classified by IBM Bob.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Classify this campaign with IBM Bob in the dashboard before escalating</li>
+          </ul>
+
+          <div class="section-title">Evidence records — sample posts</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1251027660963786640</td>
+              <td>17-Apr 06:00:12</td>
+              <td class="mono">rakshak_mumbai_384</td>
+              <td>Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus #PalgharHorror</td>
+              <td class="mono small-hash" title="61f5e6f7b5efa58fde824c91c593e745d863fba5f07c1a3915aaaaea9a231f24">61f5e6f7b5efa58f...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027677738138254</td>
+              <td>17-Apr 06:00:16</td>
+              <td class="mono">desh_mumbai_463</td>
+              <td>Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus #PalgharHorror</td>
+              <td class="mono small-hash" title="98d0510821aeb5c63671e56a9ce51b0fd70f7ecb4dc6c3a581da787f1ebb8a67">98d0510821aeb5c6...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027702904543847</td>
+              <td>17-Apr 06:00:22</td>
+              <td class="mono">veer_mumbai_175</td>
+              <td>Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus #PalgharHorror</td>
+              <td class="mono small-hash" title="3ba42dc5c1cd94d115919a85f6d9ecab0cedea663671cb2f12994d0d07f0a72a">3ba42dc5c1cd94d1...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027736461771402</td>
+              <td>17-Apr 06:00:30</td>
+              <td class="mono">suraksha_amit_820</td>
+              <td>Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus #PalgharHorror</td>
+              <td class="mono small-hash" title="47ed36c40280f1a0e8b5f21af061116d426ca2fe5843785df1355eae388fadc4">47ed36c40280f1a0...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1251027774208522037</td>
+              <td>17-Apr 06:00:39</td>
+              <td class="mono">voice_of_mumbai_16</td>
+              <td>Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharLynchHorrorClip #JusticeForSadhus #PalgharHorror</td>
+              <td class="mono small-hash" title="11c484d8d6a394590e6c528392e09253c5d7b38502eaca40264e9b3fa0071f6d">11c484d8d6a39459...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+    </div>
+
+    <div class="limitations">
+      <strong>Operational Notice & Limitations:</strong> This is automated decision support (coordination-network-toolkit, NetworkX Louvain, IBM Bob), not a finding of inauthenticity, intent, imminent violence or legal liability. Coordination and model-generated claims require independent verification by an investigating officer. Hashes support integrity checking but do not by themselves establish chain of custody, certification or legal admissibility. Legal provisions are suggestions to check and require review by a legal officer before any action.
+    </div>
+  </div>
+</body>
+</html>

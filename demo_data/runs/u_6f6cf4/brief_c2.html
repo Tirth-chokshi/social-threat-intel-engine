@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Threat Intelligence Brief — Campaign C2 (u_6f6cf4)</title>
+  <style>
+    :root {
+      --ink: #15181d;
+      --muted: #5c6470;
+      --line: #e2e5ea;
+      --subtle: #f0f2f5;
+      --accent: #2456d6;
+      --urgent: #c21f2b;
+      --urgent-soft: #fdecee;
+      --alert: #a45f00;
+      --alert-soft: #fdf3e1;
+      --benign: #1f7a3d;
+      --benign-soft: #e7f5ec;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; padding: 28px 16px; color: var(--ink); background: #f6f7f9; line-height: 1.5; font-size: 13.5px; }
+    .container { max-width: 960px; margin: 0 auto; background: #fff; padding: 36px 40px; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .header { border-bottom: 2px solid var(--ink); padding-bottom: 16px; margin-bottom: 24px; }
+    .title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-size: 24px; font-weight: 700; margin: 4px 0 0; color: var(--ink); letter-spacing: -0.01em; }
+    h2.report-page-title { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 6px; margin: 28px 0 16px; }
+    .meta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 24px; font-size: 13px; color: var(--muted); margin-top: 14px; background: var(--subtle); padding: 12px 16px; border-radius: 6px; }
+    .meta-grid strong { color: var(--ink); font-weight: 600; }
+    
+    /* Top KPI Cards */
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+    .kpi-card { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; }
+    .kpi-title { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--muted); letter-spacing: 0.04em; }
+    .kpi-val { font-size: 20px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+    .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* Architecture Visual */
+    .arch-flow { display: flex; flex-direction: column; gap: 8px; background: var(--subtle); padding: 20px; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 24px; }
+    .arch-step { display: flex; align-items: center; justify-content: space-between; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; font-size: 12.5px; }
+    .arch-num { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-right: 10px; }
+    .arch-name { font-weight: 600; color: var(--ink); }
+    .arch-desc { color: var(--muted); font-size: 12px; }
+    .arch-arrow { text-align: center; color: var(--muted); font-size: 12px; margin: -2px 0; }
+
+    /* Executive Summary */
+    .exec-summary { border-left: 4px solid var(--accent); background: var(--subtle); padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 24px; }
+    .exec-summary h2 { margin: 0 0 8px; font-size: 14px; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: 0.04em; }
+    .exec-summary p { margin: 0 0 10px; line-height: 1.6; }
+    .pointwise-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 16px 0 8px; border-top: 1px dashed var(--line); padding-top: 10px; }
+    .summary-points { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .summary-point-item { background: #ffffff; border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; font-size: 12.5px; }
+    .point-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+    .point-body { color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+    .point-action { font-size: 11.5px; color: var(--accent); font-weight: 600; }
+
+    /* Tables */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 18px; }
+    .data-table th { text-align: left; font-weight: 600; color: var(--muted); background: var(--subtle); padding: 8px 10px; border-bottom: 1px solid var(--line); font-size: 11.5px; text-transform: uppercase; }
+    .data-table td { border-bottom: 1px solid var(--line); padding: 8px 10px; vertical-align: top; }
+    .score-bar-bg { width: 80px; height: 6px; background: #e2e5ea; border-radius: 3px; display: inline-block; vertical-align: middle; margin-right: 6px; overflow: hidden; }
+    .score-bar-fill { height: 100%; background: var(--accent); }
+
+    /* Investigation Cards */
+    .investigation-card { border: 1px solid var(--line); border-radius: 8px; padding: 22px; margin-bottom: 30px; break-inside: avoid; background: #fff; }
+    .campaign-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 14px; }
+    .campaign-title { font-size: 18px; font-weight: 700; color: var(--ink); margin-right: 8px; }
+    .hashtag { font-size: 14px; font-family: ui-monospace, monospace; color: var(--muted); margin-right: 8px; }
+    .accounts-badge { font-size: 12px; font-weight: 600; background: var(--subtle); padding: 2px 8px; border-radius: 4px; }
+    .score-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 999px; text-transform: uppercase; }
+    
+    .meta-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; background: var(--subtle); padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; font-size: 12px; }
+    .meta-cell .lbl { display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--muted); }
+    .meta-cell .val { font-weight: 600; color: var(--ink); margin-top: 1px; }
+
+    .section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 16px 0 6px; }
+    .features-container { background: var(--subtle); border-radius: 6px; padding: 10px 14px; margin-bottom: 14px; }
+    .feat-row { display: flex; align-items: center; justify-content: space-between; font-size: 12px; margin-bottom: 4px; }
+    .feat-label { width: 180px; }
+    .feat-bar-bg { flex: 1; height: 5px; background: #e2e5ea; border-radius: 3px; margin: 0 12px; overflow: hidden; }
+    .feat-bar-fill { height: 100%; background: var(--accent); }
+    .feat-pts { width: 45px; text-align: right; font-weight: 600; }
+    .feat-total { border-top: 1px solid var(--line); padding-top: 6px; margin-top: 6px; display: flex; justify-content: space-between; font-size: 12.5px; }
+
+    .spread-box { background: var(--subtle); border-radius: 6px; padding: 12px 14px; font-size: 12.5px; margin-bottom: 14px; }
+    .threat-box { border: 1px solid #f3c4c8; border-left: 4px solid var(--urgent); background: #fdf6f7; border-radius: 0 6px 6px 0; padding: 14px 18px; margin-bottom: 18px; }
+    .threat-main { font-size: 18px; font-weight: 700; color: var(--urgent); margin: 4px 0; }
+    .bob-assessment-box { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 12px 16px; margin-bottom: 14px; font-size: 12.5px; }
+    .actions-box { background: var(--subtle); border-radius: 6px; padding: 12px 16px; margin-bottom: 14px; }
+    .workflow-steps { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .step-chip { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+    .step-chip.done { background: var(--benign-soft); color: var(--benign); }
+    .step-chip.pending { background: #fff; border: 1px solid var(--line); color: var(--muted); }
+    .actions-list { margin: 0; padding-left: 18px; font-size: 12.5px; }
+
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 11.5px; margin-top: 6px; margin-bottom: 14px; }
+    .evidence-table th { text-align: left; font-weight: 600; color: var(--muted); background: var(--subtle); padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    .evidence-table td { border-bottom: 1px solid var(--line); padding: 6px 8px; vertical-align: top; }
+    .legal-badge { background: var(--subtle); border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; font-size: 12px; }
+    .role-badge { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; display: inline-block; }
+    .role-badge.seed { background: var(--ink); color: #fff; }
+    .role-badge.amp { background: var(--alert-soft); color: var(--alert); }
+    .mono { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    .small-hash { color: var(--muted); }
+    .cta-alert { background: #fdecee; color: #c21f2b; border-radius: 6px; padding: 8px 12px; }
+    .print-btn { background: var(--accent); color: #fff; border: 0; border-radius: 6px; padding: 8px 16px; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+    .limitations { border-top: 2px solid var(--line); padding-top: 14px; margin-top: 28px; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+    .page-break { page-break-after: always; break-after: page; }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .container { border: 0; padding: 0; box-shadow: none; max-width: 100%; }
+      .print-btn { display: none; }
+      .page-break { page-break-after: always; break-after: page; }
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Police Cyber Cell · Section 63 BSA Evidentiary Dossier</div>
+          <h1>Campaign C2 Threat Investigation</h1>
+        </div>
+        <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+      </div>
+
+      <div class="meta-grid">
+        <div><strong>Dataset Reference:</strong> u_6f6cf4</div>
+        <div><strong>Campaign ID:</strong> Campaign C2 (#BacchaChorAlert)</div>
+        <div><strong>Coordinated Accounts:</strong> 12 accounts</div>
+        <div><strong>Escalation Priority:</strong> URGENT (CIB Score 87/100)</div>
+        <div><strong>Generated Timestamp:</strong> 28 September 2026, 15:35:55 IST</div>
+        <div><strong>Source file (X API JSON) SHA-256:</strong> <span class="mono">c41c5b6a5453fb3688bb...</span></div>
+      </div>
+    </div>
+
+    
+        <div class="threat-box">
+          <div class="eyebrow" style="color:#c21f2b">Planned offline gathering · called by campaign C2</div>
+          <div class="threat-main">📍 Gadchinchale forest checkpost, near Kasa, Palghar &nbsp; 🕕 Thu 16 Apr, 14:15 UTC</div>
+          <div>Crowd called to physically assemble at a forest checkpost armed with lathis (sticks) to surround and detain vehicle occupants, block the road with logs, break into the forest outpost, and assault the persons inside. Posts say “Gadchinchale forest chowki”.</div>
+          <div class="muted">Flagged at 14:15, <strong>0 min before</strong> the gathering. 0 min left after the last post in this batch.</div>
+          <svg viewBox="0 0 600 60" width="100%" height="60" role="img"><line x1="20" y1="30" x2="580" y2="30" stroke="#e2e5ea" stroke-width="4" /><rect x="580" y="26" width="0" height="8" fill="#f0f2f5" /><circle cx="20" cy="30" r="6" fill="#0072B2" /><text x="20" y="14" text-anchor="middle" font-size="11" fill="#0072B2">first post 14:45</text><circle cx="194" cy="30" r="6" fill="#1f7a3d" /><text x="194" y="52" text-anchor="middle" font-size="11" fill="#1f7a3d">flagged 14:15</text><circle cx="580" cy="30" r="6" fill="#8b929c" /><text x="580" y="14" text-anchor="middle" font-size="11" fill="#8b929c">last post 18:30</text><circle cx="194" cy="30" r="6" fill="#c21f2b" /><text x="194" y="52" text-anchor="middle" font-size="11" fill="#c21f2b">gathering 14:15</text></svg>
+        </div>
+
+    <div class="exec-summary">
+      <h2>Executive Summary — Campaign C2</h2>
+      <p>Campaign C2 has been designated at escalation level URGENT with a CIB coordination score of 87/100 across 12 coordinated accounts centered on &#x27;#BacchaChorAlert&#x27;, disseminated across X; in Palghar, Maharashtra, India, Kasa, Palghar, India. IBM Bob semantic analysis classifies this operation as Incitement (Severity 5/5). Targeted entity: Unidentified occupants of a vehicle described in posts as child-kidnappers or organ-theft gang members, travelling on the Gadchinchale forest road near Kasa, Palghar. Operational narrative: “A coordinated network of freshly-created accounts spread a fabricated &#x27;child-lifter / organ-theft gang&#x27; alert across the Palghar-Silvassa border area. The campaign escalated in two waves: first calling villagers to form night patrols and block road entry points, then issuing live-sighting posts directing crowds to physically surround and detain occupants of a specific vehicle at Gadchinchale forest chowki, culminating in posts inciting the mob to break into a forest outpost, assault the vehicle occupants, and resist police who were trying to intervene.”. CRITICAL: A physical gathering has been called at &#x27;Gadchinchale forest checkpost, near Kasa, Palghar&#x27; on Thu 16 Apr 14:15 UTC, posing imminent crowd mobilization risk. Primary operational directive: Deploy police at Gadchinchale forest checkpost, near Kasa, Palghar before 13:15 on 16 Apr UTC, an hour before the planned gathering. Section 63 BSA evidence records, feature weights, and statutory sections are itemized below for SHO action.</p>
+    </div>
+
+    
+        <div class="investigation-card">
+          <!-- A. Campaign Header -->
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign C2</span>
+              <span class="hashtag">#BacchaChorAlert</span>
+              <span class="accounts-badge">12 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#fdecee; color:#c21f2b; border: 1px solid #c21f2b;">
+              URGENT · CIB score 87/100
+            </div>
+          </div>
+
+          <!-- B. Campaign Overview Metadata Cards -->
+          <div class="meta-strip">
+            <div class="meta-cell"><span class="lbl">Campaign</span><span class="val">C2</span></div>
+            <div class="meta-cell"><span class="lbl">Accounts</span><span class="val">12</span></div>
+            <div class="meta-cell"><span class="lbl">Platforms</span><span class="val">X</span></div>
+            <div class="meta-cell"><span class="lbl">Location</span><span class="val">Palghar, Maharashtra, India, Kasa, Palghar, India</span></div>
+            <div class="meta-cell"><span class="lbl">First Detected</span><span class="val">14:45</span></div>
+            <div class="meta-cell"><span class="lbl">Flagged Time</span><span class="val">14:15</span></div>
+            <div class="meta-cell"><span class="lbl">CIB Score</span><span class="val">87/100</span></div>
+            <div class="meta-cell"><span class="lbl">Status</span><span class="val" style="color:#c21f2b; font-weight:600;">URGENT</span></div>
+          </div>
+
+          <!-- C. How It Spread -->
+          <div class="section-title">How It Spread (Timeline &amp; Platform Sequence)</div>
+          <div class="spread-box">
+            <p><strong>Platforms:</strong> X 14:45</p><p><strong>Towns:</strong> Palghar, Maharashtra, India 14:45 → Kasa, Palghar, India 14:15</p><p><strong>Started by:</strong> gramin_palghar_961 (X, 14:45, account 25 days old); nyay_palghar_711 (X, 14:45, account 24 days old); desh_nyay_534 (X, 14:45, account 13 days old)</p><p><strong>Flagged by the detection rule at:</strong> 14:15</p>
+          </div>
+
+          <!-- D. Why It Was Flagged -->
+          <div class="section-title">Why It Was Flagged (Coordination Factor Breakdown)</div>
+          <div class="features-container">
+            
+            <div class="feat-row">
+              <span class="feat-label">Posted within seconds</span>
+              <div class="feat-bar-bg"><div class="feat-bar-fill" style="width: 88%;"></div></div>
+              <span class="feat-pts">22 pts</span>
+            </div>
+            
+            <div class="feat-row">
+              <span class="feat-label">Near-identical text</span>
+              <div class="feat-bar-bg"><div class="feat-bar-fill" style="width: 100%;"></div></div>
+              <span class="feat-pts">25 pts</span>
+            </div>
+            
+            <div class="feat-row">
+              <span class="feat-label">Several signals</span>
+              <div class="feat-bar-bg"><div class="feat-bar-fill" style="width: 32%;"></div></div>
+              <span class="feat-pts">8 pts</span>
+            </div>
+            
+            <div class="feat-row">
+              <span class="feat-label">New accounts</span>
+              <div class="feat-bar-bg"><div class="feat-bar-fill" style="width: 60%;"></div></div>
+              <span class="feat-pts">15 pts</span>
+            </div>
+            
+            <div class="feat-row">
+              <span class="feat-label">Sudden burst</span>
+              <div class="feat-bar-bg"><div class="feat-bar-fill" style="width: 40%;"></div></div>
+              <span class="feat-pts">10 pts</span>
+            </div>
+            
+            <div class="feat-row">
+              <span class="feat-label">Same hashtag or link</span>
+              <div class="feat-bar-bg"><div class="feat-bar-fill" style="width: 28%;"></div></div>
+              <span class="feat-pts">7 pts</span>
+            </div>
+            
+            <div class="feat-total"><strong>Total CIB Coordination Score:</strong> <strong>87/100</strong></div>
+          </div>
+
+          <!-- E. Network & Core Accounts -->
+          <div class="section-title">Network &amp; Key Accounts (Seeds &amp; Amplifiers)</div>
+          <table class="data-table">
+            <thead>
+              <tr><th>Role</th><th>Handle / ID</th><th>Platform</th><th>First Active</th><th>City</th><th>Details</th></tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td><span class="role-badge seed">SEED</span></td>
+              <td class="mono">gramin_palghar_961</td>
+              <td>X</td>
+              <td>14:45</td>
+              <td>—</td>
+              <td>25 days</td>
+            </tr>
+            
+            <tr>
+              <td><span class="role-badge seed">SEED</span></td>
+              <td class="mono">nyay_palghar_711</td>
+              <td>X</td>
+              <td>14:45</td>
+              <td>—</td>
+              <td>24 days</td>
+            </tr>
+            
+            <tr>
+              <td><span class="role-badge seed">SEED</span></td>
+              <td class="mono">desh_nyay_534</td>
+              <td>X</td>
+              <td>14:45</td>
+              <td>—</td>
+              <td>13 days</td>
+            </tr>
+            
+            <tr>
+              <td><span class="role-badge amp">AMPLIFIER</span></td>
+              <td class="mono">suraksha_dharmi_3692</td>
+              <td>Coordinated Bot</td>
+              <td>—</td>
+              <td>—</td>
+              <td>108 links (3 posts)</td>
+            </tr>
+            
+            <tr>
+              <td><span class="role-badge amp">AMPLIFIER</span></td>
+              <td class="mono">voice_of_palghar_52</td>
+              <td>Coordinated Bot</td>
+              <td>—</td>
+              <td>—</td>
+              <td>108 links (3 posts)</td>
+            </tr>
+            
+            <tr>
+              <td><span class="role-badge amp">AMPLIFIER</span></td>
+              <td class="mono">awaaz_sach_9114</td>
+              <td>Coordinated Bot</td>
+              <td>—</td>
+              <td>—</td>
+              <td>108 links (3 posts)</td>
+            </tr>
+            
+            <tr>
+              <td><span class="role-badge amp">AMPLIFIER</span></td>
+              <td class="mono">voice_of_palghar_31</td>
+              <td>Coordinated Bot</td>
+              <td>—</td>
+              <td>—</td>
+              <td>108 links (3 posts)</td>
+            </tr>
+            
+            <tr>
+              <td><span class="role-badge amp">AMPLIFIER</span></td>
+              <td class="mono">suraksha_mangesh_717</td>
+              <td>Coordinated Bot</td>
+              <td>—</td>
+              <td>—</td>
+              <td>100 links (3 posts)</td>
+            </tr>
+            
+            </tbody>
+          </table>
+
+          <!-- F. IBM Bob Assessment -->
+          <div class="section-title">IBM Bob Semantic Threat Assessment</div>
+          <div class="bob-assessment-box">
+            <p><strong>Threat Type:</strong> Incitement (Severity 5/5)</p><p><strong>Target:</strong> Unidentified occupants of a vehicle described in posts as child-kidnappers or organ-theft gang members, travelling on the Gadchinchale forest road near Kasa, Palghar</p><p><strong>Narrative:</strong> A coordinated network of freshly-created accounts spread a fabricated &#x27;child-lifter / organ-theft gang&#x27; alert across the Palghar-Silvassa border area. The campaign escalated in two waves: first calling villagers to form night patrols and block road entry points, then issuing live-sighting posts directing crowds to physically surround and detain occupants of a specific vehicle at Gadchinchale forest chowki, culminating in posts inciting the mob to break into a forest outpost, assault the vehicle occupants, and resist police who were trying to intervene.</p><p class='cta-alert'>⚠️ <strong>Call to gather:</strong> Gadchinchale forest checkpost, near Kasa, Palghar, 16 Apr 14:15 UTC. Crowd called to physically assemble at a forest checkpost armed with lathis (sticks) to surround and detain vehicle occupants, block the road with logs, break into the forest outpost, and assault the persons inside.</p>
+          </div>
+
+          <!-- G. Recommended Actions Checklist -->
+          <div class="section-title">Recommended Actions Checklist</div>
+          <div class="actions-box">
+            <div class="workflow-steps">
+              <span class="step-chip done">✓ Campaign Detected</span>
+              <span class="step-chip done">✓ Coordination Analyzed</span>
+              <span class="step-chip done">✓ Evidence Collected</span>
+              <span class="step-chip done">✓ SHA-256 Hashes Generated</span>
+              <span class="step-chip done">✓ IBM Bob Classified</span>
+              <span class="step-chip pending">○ Investigator Verified</span>
+              <span class="step-chip pending">○ Action Escalated</span>
+            </div>
+            <ul class="actions-list">
+              <li>Deploy police at Gadchinchale forest checkpost, near Kasa, Palghar before 13:15 on 16 Apr UTC, an hour before the planned gathering</li><li>Issue a public advisory in the local languages now, before the gathering time</li><li>Notify SHO and district control room</li><li>Preserve evidence (hashes in brief)</li><li>Request platform takedown through the law-enforcement channel (see ITA-69A)</li><li>Consider preventive orders (BNSS-163)</li><li>Issue a public fact-check advisory</li>
+            </ul>
+          </div>
+
+          <!-- H. Evidence Records -->
+          <div class="section-title">Evidence Records (Section 63 BSA Cryptographic Chain)</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (UTC)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1250434955476017836</td>
+              <td>15-Apr 14:45:00</td>
+              <td class="mono">gramin_palghar_961</td>
+              <td>Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https://t.co/GadchinchaleRoadBlock #BacchaChorAlert #VillageSuraksha</td>
+              <td class="mono small-hash" title="69a1571547dea95ec3b84c62c2797fb69c10055bd7bda356d27daff46ab4bacb">69a1571547dea95e...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250789860701745042</td>
+              <td>16-Apr 14:15:16</td>
+              <td class="mono">suraksha_mangesh_717</td>
+              <td>Over 300 villagers surrounding suspicious vehicle at Gadchinchale forest chowki! Do not let them escape to Gujarat border! Block the road with logs! https://t.co/GadchinchaleRoadBlock #PalgharAlert #NightPatrol</td>
+              <td class="mono small-hash" title="f45c9f8bd249b8ee7ee5063edb886b46cdbd248abc1c3baef1cc97157262b37a">f45c9f8bd249b8ee...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250789877481485602</td>
+              <td>16-Apr 14:15:20</td>
+              <td class="mono">voice_of_palghar_31</td>
+              <td>⚠️ LIVE SIGHTING: Suspicious white car carrying kidnappers entered Gadchinchale forest road near Kasa! Heading towards Dadra border! All youth assemble at forest checkpost with lathis! https://t.co/GadchinchaleRoadBlock #BacchaChorAlert #Gadchinchale</td>
+              <td class="mono small-hash" title="74c3db047f1869f04dac0de040926b5a347747eabdf739b51c3d2469f0141114">74c3db047f1869f0...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250789948785227564</td>
+              <td>16-Apr 14:15:37</td>
+              <td class="mono">jago_gramin_4014</td>
+              <td>Child lifter gang trapped at Gadchinchale forest post! Villagers gathering in hundreds! They will not leave alive tonight! Live location: https://t.co/GadchinchaleRoadBlock #ChildLifterGang #Palghar</td>
+              <td class="mono small-hash" title="e0cdfd9fd8bed45f61a33e9bf4403413f58ab6d4ebc148c76d0ab49081d415ed">e0cdfd9fd8bed45f...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250827605244540678</td>
+              <td>16-Apr 16:45:15</td>
+              <td class="mono">gramin_palghar_961</td>
+              <td>Bhaiyo police unhe bachane ki koshish kar rahi hai! Forest room tod ke andar ghuso! Sabak sikhao baccha chor ko! Forest outpost burning! #PalgharMob #BacchaChorAlert</td>
+              <td class="mono small-hash" title="ba879e6b74edf2a55a5e057e716bc711dd9b5cf2fc6cba94524284a41632da6b">ba879e6b74edf2a5...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250827638799136517</td>
+              <td>16-Apr 16:45:23</td>
+              <td class="mono">nyay_palghar_711</td>
+              <td>Vehicle overturned at Gadchinchale forest road! Over 400 villagers attacking with sticks and stones! Police team outnumbered and injured! #PalgharIncident #GadchinchaleLynching</td>
+              <td class="mono small-hash" title="52b6186c4086421d5cfc6957f224ec537001b3932b6ccb47c025a4a363541152">52b6186c4086421d...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250827647189256795</td>
+              <td>16-Apr 16:45:25</td>
+              <td class="mono">voice_of_palghar_31</td>
+              <td>Bhaiyo police unhe bachane ki koshish kar rahi hai! Forest room tod ke andar ghuso! Sabak sikhao baccha chor ko! Forest outpost burning! #PalgharMob #BacchaChorAlert</td>
+              <td class="mono small-hash" title="4299153079a0fbb5ccad544ad9ce1b8f321e3d31467bd2d2731745b395d0b404">4299153079a0fbb5...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1250827739464139330</td>
+              <td>16-Apr 16:45:47</td>
+              <td class="mono">awaaz_sach_9114</td>
+              <td>Bhaiyo police unhe bachane ki koshish kar rahi hai! Forest room tod ke andar ghuso! Sabak sikhao baccha chor ko! Forest outpost burning! #PalgharMob #BacchaChorAlert</td>
+              <td class="mono small-hash" title="df12c8469fec1a890d955158c438931d413390f7d83551a00a21e3b026375317">df12c8469fec1a89...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+
+          <!-- I. Legal Suggestions -->
+          <div class="section-title">Statutory Provisions to Check (Indian Penal / IT Act)</div>
+          <div class="legal-container">
+            
+            <div class="legal-badge">
+              <strong>BNS 353</strong> (IPC 505) — 
+              <em>Statements conducing to public mischief (rumours causing fear or alarm)</em>: Posts fabricated and amplified a false &#x27;child-lifter/organ-theft gang&#x27; rumour calculated to cause fear and public alarm in Palghar villages.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 351</strong> (IPC 506) — 
+              <em>Criminal intimidation (threats)</em>: Posts explicitly threatened the vehicle occupants (&#x27;they will not leave alive tonight&#x27;; &#x27;teach them a lesson&#x27;) amounting to criminal intimidation.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 61</strong> (IPC 120A/120B) — 
+              <em>Criminal conspiracy (coordinated action)</em>: Multiple accounts posting identical or near-identical text within seconds of each other indicates a coordinated conspiracy to spread the inciting content.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 196</strong> (IPC 153A) — 
+              <em>Promoting enmity between groups</em>: Posts directing a mob to physically attack and blockade individuals described as outsiders/criminals are likely to promote enmity and violence between groups in the locality.
+            </div>
+            
+          </div>
+        </div>
+        
+
+    <div class="limitations">
+      <strong>Section 63 BSA Operational Notice &amp; Evidentiary Limitations:</strong> This report is automated decision support derived via NetworkX Louvain community clustering and IBM Bob Granite LLM assessment. In accordance with Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023, automated cryptographic hashes verify record integrity but do not dispense with the requirement for independent verification of source origin, device custody, and intent by an investigating officer.
+    </div>
+  </div>
+</body>
+</html>

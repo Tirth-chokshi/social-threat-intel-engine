@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Threat Intelligence Escalation Brief — u_52239f</title>
+  <style>
+    /* "Case File" design language (docs/design-system.md), light document for print */
+    :root { --ink: #15181d; --muted: #5c6470; --line: #e2e5ea; --subtle: #f0f2f5; --accent: #2456d6; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; padding: 32px 16px;
+           color: var(--ink); background: #f6f7f9; line-height: 1.5; font-size: 14px; }
+    .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid var(--line); border-radius: 8px; }
+    .header { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 24px; }
+    .title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .eyebrow, .section-title, .exec-summary h2 { font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-size: 22px; font-weight: 600; margin: 4px 0 0; }
+    .meta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px; font-size: 13px; color: var(--muted); margin-top: 16px; }
+    .meta-grid strong { color: var(--ink); font-weight: 500; }
+    .exec-summary { border-left: 3px solid var(--accent); background: var(--subtle); padding: 14px 18px; border-radius: 0 6px 6px 0; margin-bottom: 28px; }
+    .exec-summary h2 { margin: 0 0 6px; }
+    .exec-summary p { margin: 0; }
+    .campaign-card { border: 1px solid var(--line); border-radius: 8px; padding: 20px; margin-bottom: 20px; break-inside: avoid; }
+    .campaign-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .campaign-title { font-size: 16px; font-weight: 600; margin-right: 8px; }
+    .hashtag, .accounts-badge { font-size: 13px; color: var(--muted); margin-right: 8px; }
+    .score-badge { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+    .section-title { margin: 18px 0 8px; }
+    .features-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .feat-pill { font-size: 12px; background: var(--subtle); border-radius: 999px; padding: 2px 10px; }
+    p { margin: 4px 0; }
+    .muted { color: var(--muted); }
+    .threat-box { border: 1px solid #f3c4c8; border-left: 4px solid #c21f2b; background: #fdf6f7; border-radius: 0 8px 8px 0;
+                  padding: 14px 18px; margin-bottom: 16px; break-inside: avoid; }
+    .threat-main { font-size: 20px; font-weight: 600; margin: 4px 0; }
+    .legal-badge { background: var(--subtle); border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; font-size: 13px; }
+    .cta-alert { background: #fdecee; color: #c21f2b; border-radius: 6px; padding: 8px 12px; }
+    .actions-list { margin: 0; padding-left: 20px; }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .evidence-table th { text-align: left; font-weight: 500; color: var(--muted); background: var(--subtle); padding: 6px 8px; }
+    .evidence-table td { border-top: 1px solid var(--line); padding: 6px 8px; vertical-align: top; }
+    .mono { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    .small-hash { color: var(--muted); }
+    .print-btn { background: var(--accent); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 500; cursor: pointer; }
+    .limitations { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 24px; font-size: 12px; color: var(--muted); }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .container { border: 0; padding: 0; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Police cyber cell · for the Station House Officer</div>
+          <h1>Threat escalation brief</h1>
+        </div>
+        <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+      </div>
+
+      <div class="meta-grid">
+        <div><strong>Dataset Reference:</strong> u_52239f</div>
+        <div><strong>Generated Timestamp:</strong> 28 September 2026, 15:16:25 IST</div>
+        <div><strong>Source file (X API JSON) SHA-256:</strong> <span class="mono">53bf4796c18b6d94d345...</span></div>
+      </div>
+    </div>
+
+    
+        <div class="threat-box">
+          <div class="eyebrow" style="color:#c21f2b">Planned offline gathering · called by campaign c2</div>
+          <div class="threat-main">📍 Maujpur Chowk, near Mandir (temple), North East Delhi, Delhi, India &nbsp; 🕕 Wed 26 Feb, 17:00 IST</div>
+          <div>Armed assembly with lathis and sticks; surround and blockade the area. Posts say “Maujpur Chowk Mandir par”.</div>
+          <div class="muted">Flagged at 15:00, <strong>2 h 0 m before</strong> the gathering. 0 min left after the last post in this batch.</div>
+          <svg viewBox="0 0 600 60" width="100%" height="60" role="img"><line x1="20" y1="30" x2="580" y2="30" stroke="#e2e5ea" stroke-width="4" /><rect x="580" y="26" width="0" height="8" fill="#f0f2f5" /><circle cx="20" cy="30" r="6" fill="#0072B2" /><text x="20" y="14" text-anchor="middle" font-size="11" fill="#0072B2">first post 14:15</text><circle cx="22" cy="30" r="6" fill="#1f7a3d" /><text x="22" y="52" text-anchor="middle" font-size="11" fill="#1f7a3d">flagged 15:00</text><circle cx="580" cy="30" r="6" fill="#8b929c" /><text x="580" y="14" text-anchor="middle" font-size="11" fill="#8b929c">last post 15:15</text><circle cx="27" cy="30" r="6" fill="#c21f2b" /><text x="27" y="52" text-anchor="middle" font-size="11" fill="#c21f2b">gathering 17:00</text></svg>
+        </div>
+
+    <div class="exec-summary">
+      <h2>Summary</h2>
+      <p>BOTTOM LINE: Campaign c2 is the most urgent threat — it is calling an armed gathering at Maujpur Chowk at 17:00 IST on Wednesday 26 February and is escalated to URGENT. Two coordinated incitement campaigns (c1: 29 accounts, c2: 18 accounts) are actively spreading inflammatory content under #DelhiRiots on X, targeting residents and youth in the Jaffrabad, Maujpur, and Babarpur areas of North East Delhi. Campaign c2 specifically directs people to assemble with lathis and sticks and blockade the area near the Mandir at Maujpur Chowk — a concrete, time-bound call to violent offline action that requires immediate ground-level response before 17:00 IST on 26 February. Campaign c1 (severity 4/5) is also URGENT and continues to incite violence against individuals described as rioters and stone pelters in the same localities. A third campaign (c3, 12 accounts) coordinating around a disputed viral video linked to a named individual is assessed as benign coordination and requires only routine monitoring at this time. This summary is automated decision support and should be verified by a human analyst before operational action is taken.</p>
+    </div>
+
+    <div class="campaigns-section">
+      
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c1</span>
+              <span class="hashtag">#DelhiRiots</span>
+              <span class="accounts-badge">29 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#fdecee; color:#c21f2b; border: 1px solid #c21f2b;">
+              Urgent · coordination score 85/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 13:20</p><p><strong>Towns:</strong> North East Delhi, Delhi, India 13:20 → Delhi, India 13:20 → New Delhi 13:20 → Ghaziabad, UP 13:20</p><p><strong>Started by:</strong> irahulawasthi (X, 13:20, account 3241 days old); delhi_yodha_8793 (X, 13:20, account 21 days old); delhi_yodha_1180 (X, 13:20, account 19 days old)</p><p><strong>Flagged by the detection rule at:</strong> 13:45</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>24</strong></div><div class='feat-pill'>Near-identical text: <strong>24</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>9</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>10</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p><strong>Threat Type:</strong> Incitement (Severity 4/5)</p><p><strong>Target:</strong> People described in the posts as rioters, stone pelters, and miscreants in the North East Delhi riot-affected areas (Jaffrabad, Maujpur, Babarpur localities)</p><p><strong>Narrative:</strong> A coordinated campaign on X (Twitter), primarily in Hindi and English, amplifying and celebrating police use of force (lathi charges) against individuals labelled as rioters and miscreants during the February 2020 North East Delhi violence. Posts frame the police action as a &#x27;cleaning drive&#x27; (सफाई अभियान / cleaning drive), share a common video link, and use dehumanising &#x27;cleansing&#x27; language to glorify and encourage violent suppression of those present in the affected localities.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            
+            <div class="legal-badge">
+              <strong>BNS 196</strong> (IPC 153A) — 
+              <em>Promoting enmity between groups</em>: Posts use dehumanising &#x27;cleaning/cleansing&#x27; language and celebrate targeted violence against persons in specific localities, content likely to promote enmity and hatred between groups.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 353</strong> (IPC 505) — 
+              <em>Statements conducing to public mischief (rumours causing fear or alarm)</em>: Coordinated spread of posts framing ongoing violence as a &#x27;cleaning drive&#x27; with a shared video link constitutes statements calculated to cause public fear and alarm during active civil unrest.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 61</strong> (IPC 120A/120B) — 
+              <em>Criminal conspiracy (coordinated action)</em>: 29 accounts, many freshly created (median age 21 days), posting near-identical text and the same URL in a tightly coordinated burst over ~2 hours indicates criminal conspiracy to amplify incitement content.
+            </div>
+            
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Notify SHO and district control room</li><li>Preserve evidence (hashes in brief)</li><li>Request platform takedown through the law-enforcement channel (see ITA-69A)</li><li>Consider preventive orders (BNSS-163)</li><li>Issue a public fact-check advisory</li>
+          </ul>
+
+          <div class="section-title">Evidence records</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (IST)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1232575877134704640</td>
+              <td>26-Feb 13:20:00</td>
+              <td class="mono">irahulawasthi</td>
+              <td>दिल्ली में सफाई अभियान शुरू
+दे सटा सत.#DelhiRiots https://t.co/gTgehxDNBm</td>
+              <td class="mono small-hash" title="9c010c0f50f5909c1fc8d7aed15cdfc42069fa84bcf89e42874587492e95c1f2">9c010c0f50f5909c...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134703063</td>
+              <td>26-Feb 13:20:03</td>
+              <td class="mono">delhi_yodha_8793</td>
+              <td>Strict treatment to rioters in Northeast Delhi! Full cleaning underway! #DelhiRiots https://t.co/gTgehxDNBm</td>
+              <td class="mono small-hash" title="d64e507ae2895ba94f24a28c5033819406ec8b31c01614c8534528310cc37386">d64e507ae2895ba9...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134705184</td>
+              <td>26-Feb 13:20:10</td>
+              <td class="mono">delhi_yodha_5458</td>
+              <td>दिल्ली में सफाई अभियान शुरू दे सटा सत. #DelhiRiots https://t.co/gTgehxDNBm</td>
+              <td class="mono small-hash" title="f691bbce2f35962e80b95c056048ae3e9aba66c1d37d42c8fc6c80e2c32d35b0">f691bbce2f35962e...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134706148</td>
+              <td>26-Feb 13:45:37</td>
+              <td class="mono">irahulawasthi</td>
+              <td>Delhi Police teaching unforgettable lesson to miscreants in Jaffrabad! Watch full video: https://t.co/gTgehxDNBm #DelhiRiots #DelhiPoliceRock</td>
+              <td class="mono small-hash" title="3c0f45675823885c99b8c4262018f27a83df3f4bc7a10793f94433e5d074364b">3c0f45675823885c...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134710568</td>
+              <td>26-Feb 13:45:31</td>
+              <td class="mono">delhi_yodha_6842</td>
+              <td>Delhi Police teaching unforgettable lesson to miscreants in Jaffrabad! Watch full video: https://t.co/gTgehxDNBm #DelhiRiots #DelhiPoliceRock</td>
+              <td class="mono small-hash" title="a134d63d4bfb597454514221130e0baa7dd0b201ecf02adeb4973f6265351f17">a134d63d4bfb5974...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134716150</td>
+              <td>26-Feb 15:30:04</td>
+              <td class="mono">bharat_first_live</td>
+              <td>Maujpur and Babarpur lanes cleared with heavy lathis! Miscreants running away! https://t.co/gTgehxDNBm #DelhiRiots</td>
+              <td class="mono small-hash" title="093cf194ff04a27d7ed0e3babd3f0fbf28b422f99e824b56cf5a1e5c5f7e3971">093cf194ff04a27d...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134721440</td>
+              <td>26-Feb 15:30:29</td>
+              <td class="mono">delhi_yodha_3882</td>
+              <td>Breaking visual: Police clears Northeast Delhi lanes completely! Cleaning drive successful! https://t.co/gTgehxDNBm #DelhiRiots</td>
+              <td class="mono small-hash" title="105fa4224be757f59bc2c320b109c6500f0c2ca2e37bfe9508e24b6ac765b017">105fa4224be757f5...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c2</span>
+              <span class="hashtag">#DelhiRiots</span>
+              <span class="accounts-badge">18 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#fdecee; color:#c21f2b; border: 1px solid #c21f2b;">
+              Urgent · coordination score 77/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 14:15</p><p><strong>Towns:</strong> North East Delhi, Delhi, India 14:15</p><p><strong>Started by:</strong> delhi_rakshak_3561 (X, 14:15, account 36 days old); delhi_rakshak_9554 (X, 14:15, account 36 days old); delhi_rakshak_144 (X, 14:15, account 36 days old)</p><p><strong>Flagged by the detection rule at:</strong> 15:00</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>24</strong></div><div class='feat-pill'>Near-identical text: <strong>25</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>0</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>10</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p><strong>Threat Type:</strong> Incitement (Severity 5/5)</p><p><strong>Target:</strong> Residents and youth in the Maujpur Chowk area, North East Delhi, called to gather with weapons</p><p><strong>Narrative:</strong> A coordinated campaign of 18 accounts posting identical or near-identical messages urges youth to assemble armed with lathis and sticks at Maujpur Chowk near a temple at 5:00 PM on 26 February 2020, framing it as a defensive mobilisation and a decisive confrontation (&#x27;aar paar ki ladai&#x27;). A shared map URL is distributed across all posts. A second wave at 15:00 IST intensifies urgency with countdown messaging and calls to form a blockade.</p><p class='cta-alert'>⚠️ <strong>Call to gather:</strong> Maujpur Chowk, near Mandir (temple), North East Delhi, Delhi, India, 26 Feb 17:00 IST. Armed assembly with lathis and sticks; surround and blockade the area.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            
+            <div class="legal-badge">
+              <strong>BNS 196</strong> (IPC 153A) — 
+              <em>Promoting enmity between groups</em>: Posts promote enmity and call for armed group mobilisation framed along communal lines, likely to disturb public tranquility.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 353</strong> (IPC 505) — 
+              <em>Statements conducing to public mischief (rumours causing fear or alarm)</em>: The alarm-style messaging (&#x27;Emergency alert&#x27;, &#x27;URGENT CALL&#x27;) is designed to cause fear and incite public mischief.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 351</strong> (IPC 506) — 
+              <em>Criminal intimidation (threats)</em>: Calls to arrive with lathis/sticks and surround the area constitute criminal intimidation directed at persons in the locality.
+            </div>
+            
+            <div class="legal-badge">
+              <strong>BNS 61</strong> (IPC 120A/120B) — 
+              <em>Criminal conspiracy (coordinated action)</em>: Multiple accounts posting identical text and the same URL at the same moment evidences coordinated criminal conspiracy.
+            </div>
+            
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Deploy police at Maujpur Chowk, near Mandir (temple), North East Delhi, Delhi, India before 16:00 on 26 Feb IST, an hour before the planned gathering</li><li>Issue a public advisory in Hindi and English now, before the gathering time</li><li>Notify SHO and district control room</li><li>Preserve evidence (hashes in brief)</li><li>Request platform takedown through the law-enforcement channel (see ITA-69A)</li><li>Consider preventive orders (BNSS-163)</li><li>Issue a public fact-check advisory</li>
+          </ul>
+
+          <div class="section-title">Evidence records</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (IST)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1232575877134721793</td>
+              <td>26-Feb 14:15:03</td>
+              <td class="mono">delhi_rakshak_3561</td>
+              <td>Maujpur Chowk Mandir par 5 baje sabhi ladke lathi lekar ikkattha ho! Aar paar ki ladai hai! Map: https://t.co/MaujpurGather2020 #DelhiRiots</td>
+              <td class="mono small-hash" title="10a125f521b004e456e79bae067f75808353ce87c6506ee6923c40ab576f9598">10a125f521b004e4...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134725260</td>
+              <td>26-Feb 14:15:03</td>
+              <td class="mono">delhi_rakshak_9554</td>
+              <td>Maujpur Chowk Mandir par 5 baje sabhi ladke lathi lekar ikkattha ho! Aar paar ki ladai hai! Map: https://t.co/MaujpurGather2020 #DelhiRiots</td>
+              <td class="mono small-hash" title="fef16c8b2a4259b1e9865ebb73a1fe4fa771f0ef4ac887284beb5936216218eb">fef16c8b2a4259b1...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134724378</td>
+              <td>26-Feb 14:15:05</td>
+              <td class="mono">delhi_rakshak_144</td>
+              <td>Emergency alert: All Hindu youth must reach Maujpur Chowk at 5:00 PM today! We will protect our streets! Details: https://t.co/MaujpurGather2020 #DelhiRiots</td>
+              <td class="mono small-hash" title="63570e1f2b0463b1ea5b6d72ca5f2b1260ea83e0aadccd4036d1edef9f452428">63570e1f2b0463b1...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134724903</td>
+              <td>26-Feb 14:15:05</td>
+              <td class="mono">delhi_rakshak_4055</td>
+              <td>🚨 URGENT CALL: All youth assemble at Maujpur Chowk near Mandir today at 5:00 PM with lathis and sticks! Surround the area! Location map: https://t.co/MaujpurGather2020 #DelhiRiots</td>
+              <td class="mono small-hash" title="9bddb0d2bc6fe9d2cfa2d99ca5d674d5bf516626e47df2f3cb2118efe1259189">9bddb0d2bc6fe9d2...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134723684</td>
+              <td>26-Feb 14:15:07</td>
+              <td class="mono">delhi_rakshak_7964</td>
+              <td>Maujpur Chowk gathering at 5 PM sharp! Carry sticks and lathis for self defense! Reach Mandir road urgently! https://t.co/MaujpurGather2020 #DelhiRiots #Maujpur</td>
+              <td class="mono small-hash" title="ac8bf23069c2b26f5b87e4c995dffe97aad538cb4bfed259321ab9663952eab3">ac8bf23069c2b26f...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134723184</td>
+              <td>26-Feb 14:15:11</td>
+              <td class="mono">delhi_rakshak_6614</td>
+              <td>Maujpur Chowk Mandir par 5 baje sabhi ladke lathi lekar ikkattha ho! Aar paar ki ladai hai! Map: https://t.co/MaujpurGather2020 #DelhiRiots</td>
+              <td class="mono small-hash" title="94262b0fc4d3664a391a6ad258dc75cef77b7c8693cc2207a67b87f3e4abb78e">94262b0fc4d3664a...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134723291</td>
+              <td>26-Feb 14:15:22</td>
+              <td class="mono">delhi_rakshak_2140</td>
+              <td>🚨 URGENT CALL: All youth assemble at Maujpur Chowk near Mandir today at 5:00 PM with lathis and sticks! Surround the area! Location map: https://t.co/MaujpurGather2020 #DelhiRiots</td>
+              <td class="mono small-hash" title="33eb9cbe9d958982d3a5e55aaf60d8aeaa249c85e86d4a472ddc5fd94c16c0f6">33eb9cbe9d958982...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134722164</td>
+              <td>26-Feb 14:15:25</td>
+              <td class="mono">delhi_rakshak_8290</td>
+              <td>Maujpur Chowk gathering at 5 PM sharp! Carry sticks and lathis for self defense! Reach Mandir road urgently! https://t.co/MaujpurGather2020 #DelhiRiots #Maujpur</td>
+              <td class="mono small-hash" title="c1cd6cd59072370bc1cef2e73d4e00f660171528dc74effee2d45d86fcfb8835">c1cd6cd59072370b...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div>
+              <span class="campaign-title">Campaign c3</span>
+              <span class="hashtag">#DelhiRiots</span>
+              <span class="accounts-badge">12 accounts</span>
+            </div>
+            <div class="score-badge" style="background:#e9f1f8; color:#3b6285; border: 1px solid #3b6285;">
+              Monitor · coordination score 76/100
+            </div>
+          </div>
+
+          <div class="section-title">How it spread</div>
+          <p><strong>Platforms:</strong> X 10:15</p><p><strong>Towns:</strong> New Delhi, Delhi, India 10:15</p><p><strong>Started by:</strong> fact_verifier_7 (X, 10:15, account 940 days old); AFWACheck (X, 10:15, account 413 days old); AltNews (X, 10:15, account 1154 days old)</p><p><strong>Flagged by the detection rule at:</strong> 15:10</p>
+
+          <div class="section-title">Why it was flagged (points)</div>
+          <div class="features-grid">
+            <div class='feat-pill'>Posted within seconds: <strong>24</strong></div><div class='feat-pill'>Near-identical text: <strong>24</strong></div><div class='feat-pill'>Several signals: <strong>8</strong></div><div class='feat-pill'>New accounts: <strong>0</strong></div><div class='feat-pill'>Sudden burst: <strong>10</strong></div><div class='feat-pill'>Same hashtag or link: <strong>10</strong></div>
+          </div>
+
+          <div class="section-title">IBM Bob assessment</div>
+          <p><strong>Threat Type:</strong> Benign Coordination (Severity 1/5)</p><p><strong>Target:</strong> A person named Rahul Awasthi, described in the posts as circulating a video with false context, and more broadly the general public being exposed to the misattributed viral video</p><p><strong>Narrative:</strong> Multiple accounts coordinated to amplify fact-check debunks of a viral lathi-charge video that was being shared as footage from the Delhi Riots (Feb–Mar 2020). The posts uniformly assert that the video actually depicts UP Police in Bulandshahr during anti-CAA protests in December 2019, and direct users to an AltNews investigation. One named individual, Rahul Awasthi, is identified across several posts as the originating sharer of the misattributed video.</p>
+
+          <div class="section-title">Legal sections to check (verify with a legal officer)</div>
+          <div class="legal-container">
+            <p class='muted'>No explicit penal sections flagged. Verify in accordance with state guidelines.</p>
+          </div>
+
+          <div class="section-title">Recommended actions</div>
+          <ul class="actions-list">
+            <li>Routine periodic surveillance</li><li>No immediate enforcement action required</li>
+          </ul>
+
+          <div class="section-title">Evidence records</div>
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Post ID</th>
+                <th>Timestamp (IST)</th>
+                <th>Handle</th>
+                <th>Content Text</th>
+                <th>SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr>
+              <td class="mono">1232575877134733381</td>
+              <td>28-Feb 10:15:02</td>
+              <td class="mono">fact_verifier_7</td>
+              <td>FACT CHECK: Viral video claiming Delhi Police lathi-charge during Delhi Riots is FALSE. InVID verification proves footage is from Bulandshahr UP (Dec 2019). Read debunk: https://t.co/altnews_up_delhi #DelhiRiots #FactCheck</td>
+              <td class="mono small-hash" title="7a7e24de5f1a1517798936cbcaef2626a9cb42ca4bbf7d68b62931c55009e24e">7a7e24de5f1a1517...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134731966</td>
+              <td>28-Feb 10:15:04</td>
+              <td class="mono">AFWACheck</td>
+              <td>Viral lathi charge video is NOT from Delhi. It depicts UP police in Bulandshahr during anti-CAA protests on 20 Dec 2019. Full report: https://t.co/altnews_up_delhi #FactCheck #DelhiRiots</td>
+              <td class="mono small-hash" title="3fb3a0a1c0811eff4b65788817d768f92800036cc6a88babd66bc4929792913f">3fb3a0a1c0811eff...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134731243</td>
+              <td>28-Feb 10:15:10</td>
+              <td class="mono">AltNews</td>
+              <td>Do not forward the video showing police lathi charge in narrow lanes as Delhi. It is an old December 2019 video from UP. Investigation: https://t.co/altnews_up_delhi #AltNewsFactCheck</td>
+              <td class="mono small-hash" title="bcb19829b02af67e804c90a9e164e44d52a08b8d8eb724801948c186d3671c9a">bcb19829b02af67e...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134733351</td>
+              <td>28-Feb 10:15:10</td>
+              <td class="mono">fact_verifier_6</td>
+              <td>Do not forward the video showing police lathi charge in narrow lanes as Delhi. It is an old December 2019 video from UP. Investigation: https://t.co/altnews_up_delhi #AltNewsFactCheck</td>
+              <td class="mono small-hash" title="ce38dd38fbefbcb3c362d194e68b70a3742dc7e2725709f397c85cf2ba95efcd">ce38dd38fbefbcb3...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134733607</td>
+              <td>28-Feb 10:15:11</td>
+              <td class="mono">fact_verifier_8</td>
+              <td>Busting fake news: The video circulated by Rahul Awasthi is 2-month-old footage from Bulandshahr, Uttar Pradesh. Full breakdown: https://t.co/altnews_up_delhi #DelhiRiots</td>
+              <td class="mono small-hash" title="cfb7056e08bdce524680a6575341948718f1eca1b3ca72f4dfc2b08586f2a59c">cfb7056e08bdce52...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134732163</td>
+              <td>28-Feb 10:15:14</td>
+              <td class="mono">free_thinker</td>
+              <td>FACT CHECK: Viral video claiming Delhi Police lathi-charge during Delhi Riots is FALSE. InVID verification proves footage is from Bulandshahr UP (Dec 2019). Read debunk: https://t.co/altnews_up_delhi #DelhiRiots #FactCheck</td>
+              <td class="mono small-hash" title="1ad4d6fb695ea6e2ed670c92f2970527c661353995518c03a0355988c590b7d7">1ad4d6fb695ea6e2...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134732970</td>
+              <td>28-Feb 10:15:21</td>
+              <td class="mono">fact_verifier_3</td>
+              <td>Viral lathi charge video is NOT from Delhi. It depicts UP police in Bulandshahr during anti-CAA protests on 20 Dec 2019. Full report: https://t.co/altnews_up_delhi #FactCheck #DelhiRiots</td>
+              <td class="mono small-hash" title="1fb14f48a83824a9f0cdd1aab8aea961a4b7b75d249cb2f8f9cf0267647e3c9d">1fb14f48a83824a9...</td>
+            </tr>
+            
+            <tr>
+              <td class="mono">1232575877134733093</td>
+              <td>28-Feb 10:15:21</td>
+              <td class="mono">fact_verifier_4</td>
+              <td>Busting fake news: The video circulated by Rahul Awasthi is 2-month-old footage from Bulandshahr, Uttar Pradesh. Full breakdown: https://t.co/altnews_up_delhi #DelhiRiots</td>
+              <td class="mono small-hash" title="2d3b9234b1eafb3ee150fa33975be218eea31405e88ee81833db877996ac9028">2d3b9234b1eafb3e...</td>
+            </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+    </div>
+
+    <div class="limitations">
+      <strong>Operational Notice & Limitations:</strong> This is automated decision support (coordination-network-toolkit, NetworkX Louvain, IBM Bob), not a finding of inauthenticity, intent, imminent violence or legal liability. Coordination and model-generated claims require independent verification by an investigating officer. Hashes support integrity checking but do not by themselves establish chain of custody, certification or legal admissibility. Legal provisions are suggestions to check and require review by a legal officer before any action.
+    </div>
+  </div>
+</body>
+</html>

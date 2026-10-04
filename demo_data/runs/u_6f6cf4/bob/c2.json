@@ -1,0 +1,54 @@
+{
+  "threat_type": "incitement",
+  "target": "Unidentified occupants of a vehicle described in posts as child-kidnappers or organ-theft gang members, travelling on the Gadchinchale forest road near Kasa, Palghar",
+  "narrative": "A coordinated network of freshly-created accounts spread a fabricated 'child-lifter / organ-theft gang' alert across the Palghar-Silvassa border area. The campaign escalated in two waves: first calling villagers to form night patrols and block road entry points, then issuing live-sighting posts directing crowds to physically surround and detain occupants of a specific vehicle at Gadchinchale forest chowki, culminating in posts inciting the mob to break into a forest outpost, assault the vehicle occupants, and resist police who were trying to intervene.",
+  "severity": 5,
+  "offline_call_to_action": true,
+  "legal_suggestions": [
+    {
+      "id": "BNS-353",
+      "why": "Posts fabricated and amplified a false 'child-lifter/organ-theft gang' rumour calculated to cause fear and public alarm in Palghar villages.",
+      "title": "Statements conducing to public mischief (rumours causing fear or alarm)",
+      "law": "BNS 353",
+      "ipc": "IPC 505"
+    },
+    {
+      "id": "BNS-351",
+      "why": "Posts explicitly threatened the vehicle occupants ('they will not leave alive tonight'; 'teach them a lesson') amounting to criminal intimidation.",
+      "title": "Criminal intimidation (threats)",
+      "law": "BNS 351",
+      "ipc": "IPC 506"
+    },
+    {
+      "id": "BNS-61",
+      "why": "Multiple accounts posting identical or near-identical text within seconds of each other indicates a coordinated conspiracy to spread the inciting content.",
+      "title": "Criminal conspiracy (coordinated action)",
+      "law": "BNS 61",
+      "ipc": "IPC 120A/120B"
+    },
+    {
+      "id": "BNS-196",
+      "why": "Posts directing a mob to physically attack and blockade individuals described as outsiders/criminals are likely to promote enmity and violence between groups in the locality.",
+      "title": "Promoting enmity between groups",
+      "law": "BNS 196",
+      "ipc": "IPC 153A"
+    }
+  ],
+  "evidence_post_ids": [
+    "1250434955476017836",
+    "1250789860701745042",
+    "1250789877481485602",
+    "1250789948785227564",
+    "1250827605244540678",
+    "1250827638799136517",
+    "1250827647189256795",
+    "1250827739464139330"
+  ],
+  "offline_event": {
+    "what": "Crowd called to physically assemble at a forest checkpost armed with lathis (sticks) to surround and detain vehicle occupants, block the road with logs, break into the forest outpost, and assault the persons inside",
+    "where": "Gadchinchale forest checkpost, near Kasa, Palghar",
+    "where_quote": "Gadchinchale forest chowki",
+    "when": "2020-04-16T14:15:00+00:00",
+    "at": 1587046500
+  }
+}

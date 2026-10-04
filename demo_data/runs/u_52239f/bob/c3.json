@@ -1,0 +1,31 @@
+{
+  "threat_type": "benign_coordination",
+  "target": "A person named Rahul Awasthi, described in the posts as circulating a video with false context, and more broadly the general public being exposed to the misattributed viral video",
+  "narrative": "Multiple accounts coordinated to amplify fact-check debunks of a viral lathi-charge video that was being shared as footage from the Delhi Riots (Feb–Mar 2020). The posts uniformly assert that the video actually depicts UP Police in Bulandshahr during anti-CAA protests in December 2019, and direct users to an AltNews investigation. One named individual, Rahul Awasthi, is identified across several posts as the originating sharer of the misattributed video.",
+  "severity": 1,
+  "offline_call_to_action": false,
+  "legal_suggestions": [],
+  "evidence_post_ids": [
+    "1232575877134733381",
+    "1232575877134731966",
+    "1232575877134731243",
+    "1232575877134733351",
+    "1232575877134733607",
+    "1232575877134732163",
+    "1232575877134732970",
+    "1232575877134733093",
+    "1232575877134733105",
+    "1232575877134732566",
+    "1232575877134733858",
+    "1232575877134735898",
+    "1232575877134734347",
+    "1232575877134736713",
+    "1232575877134735994",
+    "1232575877134737066",
+    "1232575877134737471",
+    "1232575877134735490",
+    "1232575877134735476",
+    "1232575877134736283"
+  ],
+  "offline_event": null
+}

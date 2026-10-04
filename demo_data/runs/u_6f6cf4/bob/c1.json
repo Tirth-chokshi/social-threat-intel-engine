@@ -1,0 +1,43 @@
+{
+  "threat_type": "organized_misinformation",
+  "target": "Rural residents and parents in Dhule, Palghar, and Nandurbar districts of Maharashtra, particularly in villages",
+  "narrative": "A coordinated network of freshly created accounts spread fabricated claims that a gang of 25 child abductors had entered Maharashtra to kidnap children for organ harvesting, alleging five children had already been found dead without kidneys. Posts amplified a shared viral video link and urged immediate mass forwarding, framing strangers described as fake doctors and fake sadhus as suspects, during the COVID-19 lockdown period.",
+  "severity": 4,
+  "offline_call_to_action": true,
+  "legal_suggestions": [
+    {
+      "id": "BNS-353",
+      "why": "Posts spread fabricated claims of a child-abduction and organ-harvesting gang designed to cause public fear and alarm in rural Maharashtra communities.",
+      "title": "Statements conducing to public mischief (rumours causing fear or alarm)",
+      "law": "BNS 353",
+      "ipc": "IPC 505"
+    },
+    {
+      "id": "BNS-61",
+      "why": "26 accounts using near-identical templated text, shared URLs, and synchronised posting times indicate a coordinated conspiracy to disseminate the false narrative.",
+      "title": "Criminal conspiracy (coordinated action)",
+      "law": "BNS 61",
+      "ipc": "IPC 120A/120B"
+    },
+    {
+      "id": "BNS-196",
+      "why": "Posts describing perpetrators as 'fake sadhus' and 'fake doctors' entering from the border carry implicit characterisation that could promote enmity or suspicion toward identifiable outsider groups within the community.",
+      "title": "Promoting enmity between groups",
+      "law": "BNS 196",
+      "ipc": "IPC 153A"
+    }
+  ],
+  "evidence_post_ids": [
+    "1250619924283649252",
+    "1250619941060034638",
+    "1250619941060932509",
+    "1250619957835120954",
+    "1250619978808475239",
+    "1250620071083295631",
+    "1250702996668843410",
+    "1250703009248586341",
+    "1250702975697374367",
+    "1250703101526972725"
+  ],
+  "offline_event": null
+}

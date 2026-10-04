@@ -1,0 +1,1328 @@
+[
+  {
+    "id": "c1",
+    "accounts": [
+      "1235574884531656208",
+      "1235629079133793552",
+      "1235762399281840952",
+      "1236029584835281307",
+      "1236513028701225782",
+      "1238724341267969838",
+      "1238839458136190964",
+      "1238883703845871945",
+      "1239657422912240648",
+      "1239809076360923708",
+      "1240015641641902530",
+      "1240938812142789337",
+      "1241082735492407396",
+      "1241682533548801878",
+      "1241716985559034887",
+      "1241840428120619915",
+      "1241882505380434773",
+      "1243143887780653520",
+      "1243400340111633086",
+      "1244049765171546381",
+      "1244051547750952204",
+      "1244054924164591385",
+      "1244305038901998901",
+      "1244737983348415686",
+      "1244746187408369816",
+      "1246447166422243700"
+    ],
+    "post_ids": [
+      "1250619970421252539",
+      "1250703080553959223",
+      "1250620045915771688",
+      "1250703005054985900",
+      "1250620016555175239",
+      "1250703038610235296",
+      "1250620003975033055",
+      "1250702988277538957",
+      "1250619924283649252",
+      "1250703013444135073",
+      "1250620012363797413",
+      "1250703026025738245",
+      "1250620066887612969",
+      "1250702979891434309",
+      "1250619970417832657",
+      "1250702971500768330",
+      "1250619999779519498",
+      "1250703009248586341",
+      "1250619957835120954",
+      "1250703034415622122",
+      "1250619957836051562",
+      "1250702984086209974",
+      "1250619941060034638",
+      "1250703076360322175",
+      "1250620024946009657",
+      "1250702996667330718",
+      "1250620062695518636",
+      "1250702988277933570",
+      "1250619991389873886",
+      "1250703067969425637",
+      "1250620071084141847",
+      "1250703088940280557",
+      "1250620008167478900",
+      "1250703051191956044",
+      "1250620071083295631",
+      "1250703026029332962",
+      "1250619983001149009",
+      "1250703101525498640",
+      "1250620020752293082",
+      "1250703101526972725",
+      "1250619978807123672",
+      "1250702975697374367",
+      "1250620016558714052",
+      "1250703084747940026",
+      "1250619999779801952",
+      "1250703000861155840",
+      "1250619941060932509",
+      "1250702996668843410",
+      "1250619974612739580",
+      "1250703080553333999",
+      "1250619978808475239",
+      "1250703072164721901"
+    ],
+    "size": 26,
+    "top_hashtag": "#ChildTheftAlert",
+    "score": 88,
+    "features": {
+      "speed": 25,
+      "duplication": 25,
+      "multi_signal": 8,
+      "fresh_accounts": 10,
+      "burst": 10,
+      "concentration": 10
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1587006000,
+    "last_seen": 1587025831,
+    "median_account_age_days": 26,
+    "seeds": [
+      {
+        "account_id": "1236513028701225782",
+        "username": "voice_of_dhule_24",
+        "platform": "x",
+        "first_seen": 1587006000,
+        "post_id": "1250619924283649252",
+        "text": "Shocking video: Organ harvesting gang caught on camera! Spread this across Dhule, Palghar, and Nandurbar! Protect our children: https://t.co/ViralChildTheftWarn",
+        "account_age_days": 38
+      },
+      {
+        "account_id": "1240938812142789337",
+        "username": "suraksha_dhule_953",
+        "platform": "x",
+        "first_seen": 1587006004,
+        "post_id": "1250619941060034638",
+        "text": "URGENT ALERT: Gang of 25 child abductors entered Maharashtra from border! 5 children already found dead without kidneys! Forward this video to every group immed",
+        "account_age_days": 26
+      },
+      {
+        "account_id": "1244737983348415686",
+        "username": "voice_of_dhule_29",
+        "platform": "x",
+        "first_seen": 1587006004,
+        "post_id": "1250619941060932509",
+        "text": "URGENT ALERT: Gang of 25 child abductors entered Maharashtra from border! 5 children already found dead without kidneys! Forward this video to every group immed",
+        "account_age_days": 16
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "1239809076360923708",
+        "username": "village_dhule_824",
+        "links": 140,
+        "posts": 2
+      },
+      {
+        "account_id": "1240938812142789337",
+        "username": "suraksha_dhule_953",
+        "links": 140,
+        "posts": 2
+      },
+      {
+        "account_id": "1241716985559034887",
+        "username": "suraksha_ganesh_404",
+        "links": 140,
+        "posts": 2
+      },
+      {
+        "account_id": "1244051547750952204",
+        "username": "nyay_dhule_896",
+        "links": 140,
+        "posts": 2
+      },
+      {
+        "account_id": "1244746187408369816",
+        "username": "alert_dhule_757",
+        "links": 140,
+        "posts": 2
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1587006000,
+        "posts": 52
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Dhule, Maharashtra, India",
+        "first_seen": 1587006000,
+        "posts": 52
+      }
+    ],
+    "languages": {
+      "en": 52
+    },
+    "new_account_share": 0.65,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1587025804
+  },
+  {
+    "id": "c2",
+    "accounts": [
+      "1241137391466228762",
+      "1241639571290672620",
+      "1242574611674453854",
+      "1243146689574851042",
+      "1243155552138606079",
+      "1243203857939995066",
+      "1243518690785143898",
+      "1243760492411132578",
+      "1244946377341303852",
+      "1245471005080985119",
+      "1246701571933049450",
+      "1248799176915009628"
+    ],
+    "post_ids": [
+      "1250434955476017836",
+      "1250827605244540678",
+      "1250434968060597856",
+      "1250789801981497499",
+      "1250827638799136517",
+      "1250435001612245641",
+      "1250789911034224110",
+      "1250827634605971778",
+      "1250435156802748004",
+      "1250789860701745042",
+      "1250827680744398056",
+      "1250435010001115250",
+      "1250789948785227564",
+      "1250827550717065110",
+      "1250435060332598266",
+      "1250789898451729728",
+      "1250827638800808348",
+      "1250435014196962901",
+      "1250789869091348636",
+      "1250827655575785866",
+      "1250435030973986704",
+      "1250789911036841219",
+      "1250827718492971784",
+      "1250435098084315783",
+      "1250789973949931193",
+      "1250827739464139330",
+      "1250434997418049063",
+      "1250789927812514836",
+      "1250827731073408560",
+      "1250435085501395938",
+      "1250789877481485602",
+      "1250827647189256795",
+      "1250435123247980377",
+      "1250789990726087162",
+      "1250827705907571810"
+    ],
+    "size": 12,
+    "top_hashtag": "#BacchaChorAlert",
+    "score": 87,
+    "features": {
+      "speed": 22,
+      "duplication": 25,
+      "multi_signal": 8,
+      "fresh_accounts": 15,
+      "burst": 10,
+      "concentration": 7
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1586961900,
+    "last_seen": 1587055547,
+    "median_account_age_days": 19,
+    "seeds": [
+      {
+        "account_id": "1241137391466228762",
+        "username": "gramin_palghar_961",
+        "platform": "x",
+        "first_seen": 1586961900,
+        "post_id": "1250434955476017836",
+        "text": "Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https:",
+        "account_age_days": 25
+      },
+      {
+        "account_id": "1241639571290672620",
+        "username": "nyay_palghar_711",
+        "platform": "x",
+        "first_seen": 1586961903,
+        "post_id": "1250434968060597856",
+        "text": "Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https:",
+        "account_age_days": 24
+      },
+      {
+        "account_id": "1245471005080985119",
+        "username": "desh_nyay_534",
+        "platform": "x",
+        "first_seen": 1586961910,
+        "post_id": "1250434997418049063",
+        "text": "Red Alert for Palghar-Silvassa border villages! Organ theft gang roaming in unmarked vehicle! Form night patrol teams and block all village entry points! https:",
+        "account_age_days": 13
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "1242574611674453854",
+        "username": "suraksha_dharmi_3692",
+        "links": 108,
+        "posts": 3
+      },
+      {
+        "account_id": "1243518690785143898",
+        "username": "voice_of_palghar_52",
+        "links": 108,
+        "posts": 3
+      },
+      {
+        "account_id": "1244946377341303852",
+        "username": "awaaz_sach_9114",
+        "links": 108,
+        "posts": 3
+      },
+      {
+        "account_id": "1246701571933049450",
+        "username": "voice_of_palghar_31",
+        "links": 108,
+        "posts": 3
+      },
+      {
+        "account_id": "1243146689574851042",
+        "username": "suraksha_mangesh_717",
+        "links": 100,
+        "posts": 3
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1586961900,
+        "posts": 35
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Palghar, Maharashtra, India",
+        "first_seen": 1586961900,
+        "posts": 12
+      },
+      {
+        "name": "Kasa, Palghar, India",
+        "first_seen": 1587046502,
+        "posts": 23
+      }
+    ],
+    "languages": {
+      "en": 28,
+      "hinglish": 7
+    },
+    "new_account_share": 1.0,
+    "reach": {
+      "to_10_accounts_min": 1,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1587046525
+  },
+  {
+    "id": "c3",
+    "accounts": [
+      "1241403331312610063",
+      "1241784845204242249",
+      "1242476892781896286",
+      "1242882708472327006",
+      "1243421487790245664",
+      "1243815379074182599",
+      "1244008203813617517",
+      "1244136494986561361",
+      "1244647428322795169",
+      "1244731779972745596",
+      "1245133334247043813",
+      "1245778887965120241",
+      "1245834475076411595",
+      "1246036636336885163",
+      "1246182556170898605",
+      "1247015276508908471",
+      "1247968864106515280",
+      "1248078251555769294",
+      "1248086522723474092",
+      "1248394258806982077",
+      "1248642259616431209",
+      "1248894622498056619"
+    ],
+    "post_ids": [
+      "1250435089694332376",
+      "1250789999113843877",
+      "1250827743658991131",
+      "1250435093888502113",
+      "1250789952979420145",
+      "1250789890061935555",
+      "1250827554914629262",
+      "1250435014195293074",
+      "1250789911033844529",
+      "1250827693326813755",
+      "1250789923619454294",
+      "1250827747852721877",
+      "1250435098082779482",
+      "1250789860704530833",
+      "1250827693325341574",
+      "1250435152610251696",
+      "1250789990725339794",
+      "1250827630412298796",
+      "1250434972251541239",
+      "1250789885871074527",
+      "1250827697520258684",
+      "1250435135830174657",
+      "1250789835535576930",
+      "1250827735269064675",
+      "1250435160996544899",
+      "1250789848118469386",
+      "1250827617827652411",
+      "1250435026780584749",
+      "1250789877481524723",
+      "1250827609437584996",
+      "1250435148413817736",
+      "1250789932004756825",
+      "1250827596855354926",
+      "1250434976448601757",
+      "1250789839729963839",
+      "1250827722686804461",
+      "1250435030974637356",
+      "1250789835536648923",
+      "1250827735268460562",
+      "1250435110666475957",
+      "1250789890064229552",
+      "1250827714298505360",
+      "1250435114859720420",
+      "1250789835539068879",
+      "1250827739461526064",
+      "1250789982338851375",
+      "1250827609439340566",
+      "1250435005805618343",
+      "1250789839730185290",
+      "1250827584272613829",
+      "1250434963866102519",
+      "1250789936202183110",
+      "1250827672352890140",
+      "1250435043555565909",
+      "1250789936200592064",
+      "1250827705908761752",
+      "1250435014194759331",
+      "1250789994921614259",
+      "1250827613632580195",
+      "1250435056137875640",
+      "1250789902646065708",
+      "1250827571689718852"
+    ],
+    "size": 22,
+    "top_hashtag": "#BacchaChorAlert",
+    "score": 86,
+    "features": {
+      "speed": 24,
+      "duplication": 25,
+      "multi_signal": 8,
+      "fresh_accounts": 15,
+      "burst": 10,
+      "concentration": 4
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1586961902,
+    "last_seen": 1587055549,
+    "median_account_age_days": 14,
+    "seeds": [
+      {
+        "account_id": "1248086522723474092",
+        "username": "bhakt_nyay_7345",
+        "platform": "x",
+        "first_seen": 1586961902,
+        "post_id": "1250434963866102519",
+        "text": "\ud83d\udea8 URGENT WARNING: Baccha chor gang active in Palghar and Dahanu rural areas! White car spotted roaming tribal villages at night! Keep lathis and torches ready! ",
+        "account_age_days": 6
+      },
+      {
+        "account_id": "1244136494986561361",
+        "username": "voice_of_palghar_93",
+        "platform": "x",
+        "first_seen": 1586961904,
+        "post_id": "1250434972251541239",
+        "text": "Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co",
+        "account_age_days": 17
+      },
+      {
+        "account_id": "1245834475076411595",
+        "username": "voice_of_palghar_77",
+        "platform": "x",
+        "first_seen": 1586961905,
+        "post_id": "1250434976448601757",
+        "text": "Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co",
+        "account_age_days": 12
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "1246036636336885163",
+        "username": "suraksha_tushar_902",
+        "links": 128,
+        "posts": 3
+      },
+      {
+        "account_id": "1245133334247043813",
+        "username": "awaaz_rakshak_7375",
+        "links": 124,
+        "posts": 3
+      },
+      {
+        "account_id": "1247015276508908471",
+        "username": "morcha_bhakt_8565",
+        "links": 124,
+        "posts": 3
+      },
+      {
+        "account_id": "1244647428322795169",
+        "username": "suraksha_anita_741",
+        "links": 120,
+        "posts": 3
+      },
+      {
+        "account_id": "1248642259616431209",
+        "username": "alert_janta_2870",
+        "links": 120,
+        "posts": 3
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1586961902,
+        "posts": 62
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Palghar, Maharashtra, India",
+        "first_seen": 1586961902,
+        "posts": 19
+      },
+      {
+        "name": "Kasa, Palghar, India",
+        "first_seen": 1587046510,
+        "posts": 43
+      }
+    ],
+    "languages": {
+      "en": 49,
+      "hinglish": 13
+    },
+    "new_account_share": 1.0,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 1410
+    },
+    "detected_at": 1587046511
+  },
+  {
+    "id": "c4",
+    "accounts": [
+      "1232439281581138323",
+      "1233676089553866869",
+      "1233704111700408905",
+      "1234623159206071573",
+      "1236276197327383444",
+      "1239952945182193162",
+      "1240017105451807033",
+      "1240150496903540077",
+      "1240502759717870471",
+      "1242892263096840238",
+      "1243976629089541935",
+      "1244823211603788639",
+      "1244843730140889596",
+      "1247287876910795091",
+      "1248333630142064137"
+    ],
+    "post_ids": [
+      "1251027715486836314",
+      "1251110733348762946",
+      "1251027686126646672",
+      "1251110670432994032",
+      "1251027652575437938",
+      "1251110678821046781",
+      "1251027690324868856",
+      "1251110766902439416",
+      "1251027690324443014",
+      "1251110745931154828",
+      "1251027686127381506",
+      "1251110825623458282",
+      "1251027698710679331",
+      "1251110758511880416",
+      "1251027698712352404",
+      "1251110804650087307",
+      "1251027690321063078",
+      "1251110808846719796",
+      "1251027795180394385",
+      "1251110674629260534",
+      "1251027631601956027",
+      "1251110678820454571",
+      "1251027623214289615",
+      "1251110771094803140",
+      "1251027627407436174",
+      "1251110683014948211",
+      "1251027778404234059",
+      "1251110691406257483",
+      "1251027614823628880",
+      "1251110808844191068"
+    ],
+    "size": 15,
+    "top_hashtag": "#JusticeForSadhus",
+    "score": 84,
+    "features": {
+      "speed": 24,
+      "duplication": 25,
+      "multi_signal": 8,
+      "fresh_accounts": 7,
+      "burst": 10,
+      "concentration": 10
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1587103201,
+    "last_seen": 1587123040,
+    "median_account_age_days": 30,
+    "seeds": [
+      {
+        "account_id": "1248333630142064137",
+        "username": "alert_nayak_1849",
+        "platform": "x",
+        "first_seen": 1587103201,
+        "post_id": "1251027614823628880",
+        "text": "Unspeakable cruelty caught on camera: Sadhus pleading with folded hands while mob beats them to death! Maharashtra government must answer! Watch clip: https://t",
+        "account_age_days": 7
+      },
+      {
+        "account_id": "1244823211603788639",
+        "username": "voice_of_mumbai_26",
+        "platform": "x",
+        "first_seen": 1587103203,
+        "post_id": "1251027623214289615",
+        "text": "HORRIFIC VIDEO: 70-year-old Sadhu Kalpavruksha Giri and companion brutally lynched by 400-strong mob in Palghar right in front of police! Watch shocking video: ",
+        "account_age_days": 17
+      },
+      {
+        "account_id": "1244843730140889596",
+        "username": "awaaz_mumbai_70",
+        "platform": "x",
+        "first_seen": 1587103204,
+        "post_id": "1251027627407436174",
+        "text": "Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharL",
+        "account_age_days": 17
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "1233704111700408905",
+        "username": "suraksha_sanjay_312",
+        "links": 88,
+        "posts": 2
+      },
+      {
+        "account_id": "1236276197327383444",
+        "username": "suraksha_sena_2718",
+        "links": 88,
+        "posts": 2
+      },
+      {
+        "account_id": "1240017105451807033",
+        "username": "village_mumbai_104",
+        "links": 88,
+        "posts": 2
+      },
+      {
+        "account_id": "1242892263096840238",
+        "username": "voice_of_mumbai_67",
+        "links": 88,
+        "posts": 2
+      },
+      {
+        "account_id": "1248333630142064137",
+        "username": "alert_nayak_1849",
+        "links": 88,
+        "posts": 2
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1587103201,
+        "posts": 30
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Mumbai, Maharashtra, India",
+        "first_seen": 1587103201,
+        "posts": 15
+      },
+      {
+        "name": "Palghar, Maharashtra, India",
+        "first_seen": 1587123003,
+        "posts": 15
+      }
+    ],
+    "languages": {
+      "en": 30
+    },
+    "new_account_share": 0.47,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1587123006
+  },
+  {
+    "id": "c5",
+    "accounts": [
+      "1241984192086583992",
+      "1242695395050143414",
+      "1242907312257375659",
+      "1243691831653803611",
+      "1243814594740680972",
+      "1244647432520099695",
+      "1244948717763138737",
+      "1245399022435288171",
+      "1245481964796482110",
+      "1245877114369336809",
+      "1246950474514729273",
+      "1247174228047732860",
+      "1248809763340977032"
+    ],
+    "post_ids": [
+      "1250435035167332010",
+      "1250827580079994731",
+      "1250435144218831248",
+      "1250789919422958640",
+      "1250827626214752038",
+      "1250435148415816914",
+      "1250789957173655942",
+      "1250827693323265693",
+      "1250435152610123179",
+      "1250789839730734574",
+      "1250827672352285764",
+      "1250435051946298718",
+      "1250789978144668473",
+      "1250827605243866119",
+      "1250435026779825056",
+      "1250789952979278845",
+      "1250827592662509251",
+      "1250435102275606986",
+      "1250789869093483592",
+      "1250827613633036063",
+      "1250435001614458143",
+      "1250789936199766944",
+      "1250827651381308518",
+      "1250435110664880477",
+      "1250789923618023640",
+      "1250827622021695676",
+      "1250435127443226043",
+      "1250827668157570571",
+      "1250435102277118920",
+      "1250789806175657769",
+      "1250827559105705343",
+      "1250435005806787445",
+      "1250789986533323009",
+      "1250827617828762757",
+      "1250435014195493768",
+      "1250789990726960170",
+      "1250827626216585940"
+    ],
+    "size": 13,
+    "top_hashtag": "#PalgharViolence",
+    "score": 79,
+    "features": {
+      "speed": 23,
+      "duplication": 24,
+      "multi_signal": 4,
+      "fresh_accounts": 15,
+      "burst": 10,
+      "concentration": 3
+    },
+    "signals": [
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1586961911,
+    "last_seen": 1587055536,
+    "median_account_age_days": 15,
+    "seeds": [
+      {
+        "account_id": "1245399022435288171",
+        "username": "voice_of_palghar_34",
+        "platform": "x",
+        "first_seen": 1586961911,
+        "post_id": "1250435001614458143",
+        "text": "Bhaiyo sabhi gaon wale savdhan rahein! Lockdown mein baccha chor gang nikal chuka hai! Bachho ko ghar ke bahar bilkul mat nikalne do! Watch video: https://t.co/",
+        "account_age_days": 13
+      },
+      {
+        "account_id": "1247174228047732860",
+        "username": "voice_of_palghar_72",
+        "platform": "x",
+        "first_seen": 1586961912,
+        "post_id": "1250435005806787445",
+        "text": "Children being kidnapped in Konkan belt! Gang caught on video near border! Do not sleep tonight, guard your borders with bamboo sticks! Share fast: https://t.co",
+        "account_age_days": 8
+      },
+      {
+        "account_id": "1248809763340977032",
+        "username": "suraksha_rohit_173",
+        "platform": "x",
+        "first_seen": 1586961914,
+        "post_id": "1250435014195493768",
+        "text": "\ud83d\udea8 URGENT WARNING: Baccha chor gang active in Palghar and Dahanu rural areas! White car spotted roaming tribal villages at night! Keep lathis and torches ready! ",
+        "account_age_days": 4
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "1242907312257375659",
+        "username": "gramin_bhakt_592",
+        "links": 80,
+        "posts": 3
+      },
+      {
+        "account_id": "1243814594740680972",
+        "username": "village_morcha_4018",
+        "links": 80,
+        "posts": 3
+      },
+      {
+        "account_id": "1247174228047732860",
+        "username": "voice_of_palghar_72",
+        "links": 80,
+        "posts": 3
+      },
+      {
+        "account_id": "1242695395050143414",
+        "username": "hindu_palghar_16",
+        "links": 56,
+        "posts": 3
+      },
+      {
+        "account_id": "1244647432520099695",
+        "username": "sach_morcha_6889",
+        "links": 52,
+        "posts": 3
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1586961911,
+        "posts": 37
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Palghar, Maharashtra, India",
+        "first_seen": 1586961911,
+        "posts": 13
+      },
+      {
+        "name": "Kasa, Palghar, India",
+        "first_seen": 1587046503,
+        "posts": 24
+      }
+    ],
+    "languages": {
+      "en": 21,
+      "hinglish": 16
+    },
+    "new_account_share": 1.0,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1587046544
+  },
+  {
+    "id": "c6",
+    "accounts": [
+      "1008508473835087506",
+      "1052445020387368930",
+      "1167220509373468389",
+      "527923812892290124",
+      "530371730338828038",
+      "536608681360931095",
+      "647132169500544711",
+      "682949055216034331",
+      "733541907690948666",
+      "739006548931654761",
+      "761304173638637986",
+      "787077811009771546",
+      "788202501043896028",
+      "814335133087380672",
+      "876196381718632892",
+      "986295876057367075",
+      "990962248973362030"
+    ],
+    "post_ids": [
+      "1250661514998749148",
+      "1251133361617323324",
+      "1250661632440305289",
+      "1251133403560234847",
+      "1250661619859989321",
+      "1251133319673612587",
+      "1250661582108826224",
+      "1251133470670845426",
+      "1250661556943276058",
+      "1251133307093568502",
+      "1250661556942287780",
+      "1251133353230254821",
+      "1250661531778973644",
+      "1251133437115449084",
+      "1250661473057780318",
+      "1251133353230793647",
+      "1250661452085605564",
+      "1251133474865389119",
+      "1250661636637646207",
+      "1251133361618677675",
+      "1250661460474584251",
+      "1251133332256259967",
+      "1250661456280384453",
+      "1251133428725039449",
+      "1250661552750140031",
+      "1251133374200162818",
+      "1250661481448398922",
+      "1251133323868478918",
+      "1250661628245827982",
+      "1251133458085179977",
+      "1250661636635532036",
+      "1251133487445596149",
+      "1250661485640531541",
+      "1251133382588219262"
+    ],
+    "size": 17,
+    "top_hashtag": "#PalgharRelief",
+    "score": 77,
+    "features": {
+      "speed": 24,
+      "duplication": 25,
+      "multi_signal": 8,
+      "fresh_accounts": 0,
+      "burst": 10,
+      "concentration": 10
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1587015901,
+    "last_seen": 1587128443,
+    "median_account_age_days": 1279,
+    "seeds": [
+      {
+        "account_id": "733541907690948666",
+        "username": "dnyaneshwar_patil9271",
+        "platform": "x",
+        "first_seen": 1587015901,
+        "post_id": "1250661452085605564",
+        "text": "Primary Health Centre Kasa Advisory: Mobile medical van visiting villages for maternal checkup and infant vaccination today. Please maintain queue discipline: h",
+        "account_age_days": 1426
+      },
+      {
+        "account_id": "787077811009771546",
+        "username": "snehal_shinde2961",
+        "platform": "x",
+        "first_seen": 1587015902,
+        "post_id": "1250661456280384453",
+        "text": "Primary Health Centre Kasa Advisory: Mobile medical van visiting villages for maternal checkup and infant vaccination today. Please maintain queue discipline: h",
+        "account_age_days": 1279
+      },
+      {
+        "account_id": "761304173638637986",
+        "username": "rahul_bhoir9912",
+        "platform": "x",
+        "first_seen": 1587015903,
+        "post_id": "1250661460474584251",
+        "text": "COVID-19 RURAL RELIEF: Volunteer teams providing dry ration kits (rice, dal, oil) to tribal families in Jawhar and Dahanu blocks. For emergency grocery aid, con",
+        "account_age_days": 1350
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "527923812892290124",
+        "username": "chetan_ghare5025",
+        "links": 80,
+        "posts": 2
+      },
+      {
+        "account_id": "788202501043896028",
+        "username": "aniket_kadam9747",
+        "links": 80,
+        "posts": 2
+      },
+      {
+        "account_id": "986295876057367075",
+        "username": "pooja_jadhav9398",
+        "links": 80,
+        "posts": 2
+      },
+      {
+        "account_id": "1008508473835087506",
+        "username": "tushar_kadam7027",
+        "links": 72,
+        "posts": 2
+      },
+      {
+        "account_id": "1167220509373468389",
+        "username": "kiran_shinde8985",
+        "links": 72,
+        "posts": 2
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1587015901,
+        "posts": 34
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Dahanu, Palghar, India",
+        "first_seen": 1587015901,
+        "posts": 17
+      },
+      {
+        "name": "Palghar, Maharashtra, India",
+        "first_seen": 1587128400,
+        "posts": 17
+      }
+    ],
+    "languages": {
+      "en": 34
+    },
+    "new_account_share": 0.0,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1587128411
+  },
+  {
+    "id": "c7",
+    "accounts": [
+      "1065044617329656013",
+      "189807549871547813",
+      "226722231745496572",
+      "240925306911249778",
+      "346600091550456872",
+      "353962613406014289",
+      "368580022892469462",
+      "502630951811084855",
+      "545652473200238928",
+      "631417626557128556",
+      "785196783106579540",
+      "839832646844789333",
+      "860857757464190785"
+    ],
+    "post_ids": [
+      "1250650265875454425",
+      "1251080584691690917",
+      "1250650123273045494",
+      "1251080635020699242",
+      "1250650169410064456",
+      "1251080525970511135",
+      "1250650286849814700",
+      "1251080517583690697",
+      "1250650161018548316",
+      "1251080647607277477",
+      "1250650161020750259",
+      "1251080563720977085",
+      "1250650261682856731",
+      "1251080471445780282",
+      "1250650240709609603",
+      "1251080639215278343",
+      "1250650236517937996",
+      "1251080551136766039",
+      "1250650265875830329",
+      "1251080572107700679",
+      "1250650249101695253",
+      "1251080593079716436",
+      "1250650270070654254",
+      "1251080614051052911",
+      "1250650282653216459",
+      "1251080555332326672"
+    ],
+    "size": 13,
+    "top_hashtag": "#PalgharUpdate",
+    "score": 77,
+    "features": {
+      "speed": 24,
+      "duplication": 25,
+      "multi_signal": 8,
+      "fresh_accounts": 0,
+      "burst": 10,
+      "concentration": 10
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1587013200,
+    "last_seen": 1587115845,
+    "median_account_age_days": 2064,
+    "seeds": [
+      {
+        "account_id": "189807549871547813",
+        "username": "rural_konkan_voice_11551",
+        "platform": "x",
+        "first_seen": 1587013200,
+        "post_id": "1250650123273045494",
+        "text": "Palghar Police Advisory: No child-kidnapping gang is active in district. Strictly warn against taking law into own hands or setting up vigilante checkpoints. Di",
+        "account_age_days": 2927
+      },
+      {
+        "account_id": "346600091550456872",
+        "username": "maha_bulletin_24x7",
+        "platform": "x",
+        "first_seen": 1587013209,
+        "post_id": "1250650161018548316",
+        "text": "MAHA CYBER FACT CHECK: Videos claiming child lifters or kidney thieves roaming in Palghar/Dhule are COMPLETELY FAKE. Old Syrian war clips and foreign safety dri",
+        "account_age_days": 2494
+      },
+      {
+        "account_id": "353962613406014289",
+        "username": "kokan_ground_news_97577",
+        "platform": "x",
+        "first_seen": 1587013209,
+        "post_id": "1250650161020750259",
+        "text": "MAHA CYBER FACT CHECK: Videos claiming child lifters or kidney thieves roaming in Palghar/Dhule are COMPLETELY FAKE. Old Syrian war clips and foreign safety dri",
+        "account_age_days": 2474
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "1065044617329656013",
+        "username": "dgpmie",
+        "links": 64,
+        "posts": 2
+      },
+      {
+        "account_id": "226722231745496572",
+        "username": "rural_konkan_voice_63268",
+        "links": 64,
+        "posts": 2
+      },
+      {
+        "account_id": "240925306911249778",
+        "username": "rural_konkan_voice_8862",
+        "links": 64,
+        "posts": 2
+      },
+      {
+        "account_id": "346600091550456872",
+        "username": "maha_bulletin_24x7",
+        "links": 64,
+        "posts": 2
+      },
+      {
+        "account_id": "368580022892469462",
+        "username": "palghar_tribal_times_32538",
+        "links": 64,
+        "posts": 2
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1587013200,
+        "posts": 26
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Mumbai, Maharashtra, India",
+        "first_seen": 1587013200,
+        "posts": 13
+      },
+      {
+        "name": "Palghar, Maharashtra, India",
+        "first_seen": 1587115803,
+        "posts": 13
+      }
+    ],
+    "languages": {
+      "en": 26
+    },
+    "new_account_share": 0.0,
+    "reach": {
+      "to_10_accounts_min": 1,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1587115823
+  },
+  {
+    "id": "c8",
+    "accounts": [
+      "1233038035253545696",
+      "1235197359420371461",
+      "1239999724257361720",
+      "1244261808207583005",
+      "1248313442956290043"
+    ],
+    "post_ids": [
+      "1251027702904543847",
+      "1251110724958360906",
+      "1251027774208522037",
+      "1251110766902247044",
+      "1251027677738138254",
+      "1251110666238113016",
+      "1251027660963786640",
+      "1251110821428893613",
+      "1251027736461771402",
+      "1251110699791521875"
+    ],
+    "size": 5,
+    "top_hashtag": "#JusticeForSadhus",
+    "score": 72,
+    "features": {
+      "speed": 22,
+      "duplication": 25,
+      "multi_signal": 4,
+      "fresh_accounts": 6,
+      "burst": 10,
+      "concentration": 5
+    },
+    "signals": [
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1587103212,
+    "last_seen": 1587123039,
+    "median_account_age_days": 30,
+    "seeds": [
+      {
+        "account_id": "1244261808207583005",
+        "username": "rakshak_mumbai_384",
+        "platform": "x",
+        "first_seen": 1587103212,
+        "post_id": "1251027660963786640",
+        "text": "Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharL",
+        "account_age_days": 18
+      },
+      {
+        "account_id": "1239999724257361720",
+        "username": "desh_mumbai_463",
+        "platform": "x",
+        "first_seen": 1587103216,
+        "post_id": "1251027677738138254",
+        "text": "Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharL",
+        "account_age_days": 30
+      },
+      {
+        "account_id": "1233038035253545696",
+        "username": "veer_mumbai_175",
+        "platform": "x",
+        "first_seen": 1587103222,
+        "post_id": "1251027702904543847",
+        "text": "Brutal slaughter of innocent ascetics in Palghar Maharashtra! Police handed over the 70yo sadhu directly to bloodthirsty mob! Watch truth: https://t.co/PalgharL",
+        "account_age_days": 49
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "1233038035253545696",
+        "username": "veer_mumbai_175",
+        "links": 32,
+        "posts": 2
+      },
+      {
+        "account_id": "1235197359420371461",
+        "username": "voice_of_mumbai_16",
+        "links": 32,
+        "posts": 2
+      },
+      {
+        "account_id": "1239999724257361720",
+        "username": "desh_mumbai_463",
+        "links": 32,
+        "posts": 2
+      },
+      {
+        "account_id": "1244261808207583005",
+        "username": "rakshak_mumbai_384",
+        "links": 32,
+        "posts": 2
+      },
+      {
+        "account_id": "1248313442956290043",
+        "username": "suraksha_amit_820",
+        "links": 32,
+        "posts": 2
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1587103212,
+        "posts": 10
+      }
+    ],
+    "town_path": [
+      {
+        "name": "Mumbai, Maharashtra, India",
+        "first_seen": 1587103212,
+        "posts": 5
+      },
+      {
+        "name": "Palghar, Maharashtra, India",
+        "first_seen": 1587123002,
+        "posts": 5
+      }
+    ],
+    "languages": {
+      "en": 5,
+      "hinglish": 5
+    },
+    "new_account_share": 0.4,
+    "reach": {
+      "to_10_accounts_min": null,
+      "to_90pct_min": 0
+    },
+    "detected_at": 1587123039
+  }
+]

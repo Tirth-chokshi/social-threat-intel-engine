@@ -24,6 +24,7 @@ WORKDIR /app
 COPY src/requirements.txt ./src/requirements.txt
 RUN python -m pip install --no-cache-dir -r src/requirements.txt
 COPY src/ ./src/
+COPY demo_data/ ./demo_data/
 COPY .bob/rules-osint-analyst/ ./.bob/rules-osint-analyst/
 COPY --from=frontend /frontend/dist ./src/web/dist
 

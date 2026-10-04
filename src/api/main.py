@@ -5,6 +5,7 @@ import hmac
 import json
 import logging
 import mimetypes
+import os
 import re
 import shutil
 import threading
@@ -21,7 +22,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from config import (APP_AUTH_PASSWORD, APP_AUTH_USERNAME, APP_ENV, WEB_DIST, RUNS, STREAMS,
-                    STREAM_WINDOW_SECONDS, STREAM_RETENTION_SECONDS, MIN_EDGE_WEIGHT, TIME_WINDOW, X_BEARER_TOKEN)
+                    STREAM_WINDOW_SECONDS, STREAM_RETENTION_SECONDS, MIN_EDGE_WEIGHT, TIME_WINDOW, X_BEARER_TOKEN,
+                    DEMO_RUNS, ROOT)
 from engine.xstore import NotXApiData, ingest, open_db, posts_from_responses, read_posts
 from connectors.x_search import XApiError, search_recent
 from engine.pipeline import analyze, STAGES
@@ -45,6 +47,31 @@ STREAM_LOCK = threading.RLock()  # ponytail: one worker process only; the graph 
 
 
 app = FastAPI(title="Social Media Threat Intelligence Engine")
+
+
+@app.on_event("startup")
+def startup_seed_demo_data():
+    """Ensure runtime directories exist and auto-seed pre-loaded demonstration datasets on fresh deployments."""
+    RUNS.mkdir(parents=True, exist_ok=True)
+    STREAMS.mkdir(parents=True, exist_ok=True)
+
+    # Do not auto-seed during automated test runs
+    if os.getenv("PYTEST_CURRENT_TEST"):
+        return
+
+    try:
+        has_datasets = any(d.is_dir() and (d / "x.db").exists() for d in RUNS.iterdir())
+    except Exception:
+        has_datasets = False
+
+    if not has_datasets and DEMO_RUNS.exists():
+        log.info("No datasets detected in %s; seeding pre-loaded demo runs from %s...", RUNS, DEMO_RUNS)
+        for d in DEMO_RUNS.iterdir():
+            if d.is_dir() and (d / "x.db").exists():
+                target = RUNS / d.name
+                if not target.exists():
+                    shutil.copytree(d, target)
+                    log.info("Seeded demo dataset: %s", d.name)
 
 
 @app.middleware("http")

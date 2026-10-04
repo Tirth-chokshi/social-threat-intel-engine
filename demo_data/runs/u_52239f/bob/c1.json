@@ -1,0 +1,40 @@
+{
+  "threat_type": "incitement",
+  "target": "People described in the posts as rioters, stone pelters, and miscreants in the North East Delhi riot-affected areas (Jaffrabad, Maujpur, Babarpur localities)",
+  "narrative": "A coordinated campaign on X (Twitter), primarily in Hindi and English, amplifying and celebrating police use of force (lathi charges) against individuals labelled as rioters and miscreants during the February 2020 North East Delhi violence. Posts frame the police action as a 'cleaning drive' (सफाई अभियान / cleaning drive), share a common video link, and use dehumanising 'cleansing' language to glorify and encourage violent suppression of those present in the affected localities.",
+  "severity": 4,
+  "offline_call_to_action": false,
+  "legal_suggestions": [
+    {
+      "id": "BNS-196",
+      "why": "Posts use dehumanising 'cleaning/cleansing' language and celebrate targeted violence against persons in specific localities, content likely to promote enmity and hatred between groups.",
+      "title": "Promoting enmity between groups",
+      "law": "BNS 196",
+      "ipc": "IPC 153A"
+    },
+    {
+      "id": "BNS-353",
+      "why": "Coordinated spread of posts framing ongoing violence as a 'cleaning drive' with a shared video link constitutes statements calculated to cause public fear and alarm during active civil unrest.",
+      "title": "Statements conducing to public mischief (rumours causing fear or alarm)",
+      "law": "BNS 353",
+      "ipc": "IPC 505"
+    },
+    {
+      "id": "BNS-61",
+      "why": "29 accounts, many freshly created (median age 21 days), posting near-identical text and the same URL in a tightly coordinated burst over ~2 hours indicates criminal conspiracy to amplify incitement content.",
+      "title": "Criminal conspiracy (coordinated action)",
+      "law": "BNS 61",
+      "ipc": "IPC 120A/120B"
+    }
+  ],
+  "evidence_post_ids": [
+    "1232575877134704640",
+    "1232575877134703063",
+    "1232575877134705184",
+    "1232575877134706148",
+    "1232575877134710568",
+    "1232575877134716150",
+    "1232575877134721440"
+  ],
+  "offline_event": null
+}

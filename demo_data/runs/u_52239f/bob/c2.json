@@ -1,0 +1,66 @@
+{
+  "threat_type": "incitement",
+  "target": "Residents and youth in the Maujpur Chowk area, North East Delhi, called to gather with weapons",
+  "narrative": "A coordinated campaign of 18 accounts posting identical or near-identical messages urges youth to assemble armed with lathis and sticks at Maujpur Chowk near a temple at 5:00 PM on 26 February 2020, framing it as a defensive mobilisation and a decisive confrontation ('aar paar ki ladai'). A shared map URL is distributed across all posts. A second wave at 15:00 IST intensifies urgency with countdown messaging and calls to form a blockade.",
+  "severity": 5,
+  "offline_call_to_action": true,
+  "legal_suggestions": [
+    {
+      "id": "BNS-196",
+      "why": "Posts promote enmity and call for armed group mobilisation framed along communal lines, likely to disturb public tranquility.",
+      "title": "Promoting enmity between groups",
+      "law": "BNS 196",
+      "ipc": "IPC 153A"
+    },
+    {
+      "id": "BNS-353",
+      "why": "The alarm-style messaging ('Emergency alert', 'URGENT CALL') is designed to cause fear and incite public mischief.",
+      "title": "Statements conducing to public mischief (rumours causing fear or alarm)",
+      "law": "BNS 353",
+      "ipc": "IPC 505"
+    },
+    {
+      "id": "BNS-351",
+      "why": "Calls to arrive with lathis/sticks and surround the area constitute criminal intimidation directed at persons in the locality.",
+      "title": "Criminal intimidation (threats)",
+      "law": "BNS 351",
+      "ipc": "IPC 506"
+    },
+    {
+      "id": "BNS-61",
+      "why": "Multiple accounts posting identical text and the same URL at the same moment evidences coordinated criminal conspiracy.",
+      "title": "Criminal conspiracy (coordinated action)",
+      "law": "BNS 61",
+      "ipc": "IPC 120A/120B"
+    }
+  ],
+  "evidence_post_ids": [
+    "1232575877134721793",
+    "1232575877134725260",
+    "1232575877134724378",
+    "1232575877134724903",
+    "1232575877134723684",
+    "1232575877134723184",
+    "1232575877134723291",
+    "1232575877134722164",
+    "1232575877134721611",
+    "1232575877134724804",
+    "1232575877134722810",
+    "1232575877134728725",
+    "1232575877134730791",
+    "1232575877134727780",
+    "1232575877134726400",
+    "1232575877134728461",
+    "1232575877134727143",
+    "1232575877134730348",
+    "1232575877134725966",
+    "1232575877134729117"
+  ],
+  "offline_event": {
+    "what": "Armed assembly with lathis and sticks; surround and blockade the area",
+    "where": "Maujpur Chowk, near Mandir (temple), North East Delhi, Delhi, India",
+    "where_quote": "Maujpur Chowk Mandir par",
+    "when": "2020-02-26T17:00:00+05:30",
+    "at": 1582716600
+  }
+}

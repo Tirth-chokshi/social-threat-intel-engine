@@ -1,0 +1,554 @@
+[
+  {
+    "id": "c1",
+    "accounts": [
+      "283749102",
+      "u_c1_amit_bjp",
+      "u_c1_bhagwa_sher",
+      "u_c1_bharat_first",
+      "u_c1_bot_1",
+      "u_c1_bot_10",
+      "u_c1_bot_11",
+      "u_c1_bot_12",
+      "u_c1_bot_13",
+      "u_c1_bot_14",
+      "u_c1_bot_15",
+      "u_c1_bot_16",
+      "u_c1_bot_17",
+      "u_c1_bot_18",
+      "u_c1_bot_2",
+      "u_c1_bot_3",
+      "u_c1_bot_4",
+      "u_c1_bot_5",
+      "u_c1_bot_6",
+      "u_c1_bot_7",
+      "u_c1_bot_8",
+      "u_c1_bot_9",
+      "u_c1_delhi_patriot",
+      "u_c1_delhi_updates",
+      "u_c1_deshbhakt_singh",
+      "u_c1_hindutva_varta",
+      "u_c1_modi_force",
+      "u_c1_namo_army",
+      "u_c1_sanatan_rakshak"
+    ],
+    "post_ids": [
+      "1232575877134704640",
+      "1232575877134706148",
+      "1232575877134713966",
+      "1232575877134701217",
+      "1232575877134708028",
+      "1232575877134715454",
+      "1232575877134700671",
+      "1232575877134707421",
+      "1232575877134714982",
+      "1232575877134701954",
+      "1232575877134708916",
+      "1232575877134716150",
+      "1232575877134702473",
+      "1232575877134709300",
+      "1232575877134716493",
+      "1232575877134704309",
+      "1232575877134711263",
+      "1232575877134719110",
+      "1232575877134704325",
+      "1232575877134711712",
+      "1232575877134719346",
+      "1232575877134704600",
+      "1232575877134712007",
+      "1232575877134719824",
+      "1232575877134704712",
+      "1232575877134712368",
+      "1232575877134720240",
+      "1232575877134704797",
+      "1232575877134712407",
+      "1232575877134720418",
+      "1232575877134705085",
+      "1232575877134712494",
+      "1232575877134720688",
+      "1232575877134705184",
+      "1232575877134712970",
+      "1232575877134721188",
+      "1232575877134705656",
+      "1232575877134713370",
+      "1232575877134721440",
+      "1232575877134705720",
+      "1232575877134713647",
+      "1232575877134721503",
+      "1232575877134702727",
+      "1232575877134709491",
+      "1232575877134716851",
+      "1232575877134703003",
+      "1232575877134709557",
+      "1232575877134717277",
+      "1232575877134703063",
+      "1232575877134709969",
+      "1232575877134717516",
+      "1232575877134703552",
+      "1232575877134710039",
+      "1232575877134717998",
+      "1232575877134703717",
+      "1232575877134710202",
+      "1232575877134718256",
+      "1232575877134703829",
+      "1232575877134710568",
+      "1232575877134718419",
+      "1232575877134704039",
+      "1232575877134711022",
+      "1232575877134718618",
+      "1232575877134704254",
+      "1232575877134711047",
+      "1232575877134718920",
+      "1232575877134701493",
+      "1232575877134708640",
+      "1232575877134715794",
+      "1232575877134700411",
+      "1232575877134707318",
+      "1232575877134714525",
+      "1232575877134700256",
+      "1232575877134707000",
+      "1232575877134714073",
+      "1232575877134700236",
+      "1232575877134706637",
+      "1232575877134713986",
+      "1232575877134702314",
+      "1232575877134708979",
+      "1232575877134716463",
+      "1232575877134700751",
+      "1232575877134707887",
+      "1232575877134715263",
+      "1232575877134701328",
+      "1232575877134708182",
+      "1232575877134715713"
+    ],
+    "size": 29,
+    "top_hashtag": "#DelhiRiots",
+    "score": 85,
+    "features": {
+      "speed": 24,
+      "duplication": 24,
+      "multi_signal": 8,
+      "fresh_accounts": 9,
+      "burst": 10,
+      "concentration": 10
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1582703400,
+    "last_seen": 1582711237,
+    "median_account_age_days": 21,
+    "seeds": [
+      {
+        "account_id": "283749102",
+        "username": "irahulawasthi",
+        "platform": "x",
+        "first_seen": 1582703400,
+        "post_id": "1232575877134704640",
+        "text": "\u0926\u093f\u0932\u094d\u0932\u0940 \u092e\u0947\u0902 \u0938\u092b\u093e\u0908 \u0905\u092d\u093f\u092f\u093e\u0928 \u0936\u0941\u0930\u0942\n\u0926\u0947 \u0938\u091f\u093e \u0938\u0924.#DelhiRiots https://t.co/gTgehxDNBm",
+        "account_age_days": 3241
+      },
+      {
+        "account_id": "u_c1_bot_4",
+        "username": "delhi_yodha_8793",
+        "platform": "x",
+        "first_seen": 1582703403,
+        "post_id": "1232575877134703063",
+        "text": "Strict treatment to rioters in Northeast Delhi! Full cleaning underway! #DelhiRiots https://t.co/gTgehxDNBm",
+        "account_age_days": 21
+      },
+      {
+        "account_id": "u_c1_bot_1",
+        "username": "delhi_yodha_1180",
+        "platform": "x",
+        "first_seen": 1582703404,
+        "post_id": "1232575877134702473",
+        "text": "RT @irahulawasthi: \u0926\u093f\u0932\u094d\u0932\u0940 \u092e\u0947\u0902 \u0938\u092b\u093e\u0908 \u0905\u092d\u093f\u092f\u093e\u0928 \u0936\u0941\u0930\u0942\n\u0926\u0947 \u0938\u091f\u093e \u0938\u0924.#DelhiRiots https://t.co/gTgehxDNBm",
+        "account_age_days": 19
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "u_c1_modi_force",
+        "username": "modi_force_2024",
+        "links": 196,
+        "posts": 3
+      },
+      {
+        "account_id": "u_c1_deshbhakt_singh",
+        "username": "deshbhakt_singh",
+        "links": 188,
+        "posts": 3
+      },
+      {
+        "account_id": "u_c1_bot_18",
+        "username": "delhi_yodha_6822",
+        "links": 180,
+        "posts": 3
+      },
+      {
+        "account_id": "u_c1_bot_6",
+        "username": "delhi_yodha_6706",
+        "links": 180,
+        "posts": 3
+      },
+      {
+        "account_id": "u_c1_bot_8",
+        "username": "delhi_yodha_1617",
+        "links": 180,
+        "posts": 3
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1582703400,
+        "posts": 87
+      }
+    ],
+    "town_path": [
+      {
+        "name": "North East Delhi, Delhi, India",
+        "first_seen": 1582703400,
+        "posts": 73
+      },
+      {
+        "name": "Delhi, India",
+        "first_seen": 1582703404,
+        "posts": 11
+      },
+      {
+        "name": "New Delhi",
+        "first_seen": 1582703405,
+        "posts": 2
+      },
+      {
+        "name": "Ghaziabad, UP",
+        "first_seen": 1582703431,
+        "posts": 1
+      }
+    ],
+    "languages": {
+      "hi": 72,
+      "en": 15
+    },
+    "new_account_share": 0.62,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1582704912
+  },
+  {
+    "id": "c2",
+    "accounts": [
+      "u_c2_mob_1",
+      "u_c2_mob_10",
+      "u_c2_mob_11",
+      "u_c2_mob_12",
+      "u_c2_mob_13",
+      "u_c2_mob_14",
+      "u_c2_mob_15",
+      "u_c2_mob_16",
+      "u_c2_mob_17",
+      "u_c2_mob_18",
+      "u_c2_mob_2",
+      "u_c2_mob_3",
+      "u_c2_mob_4",
+      "u_c2_mob_5",
+      "u_c2_mob_6",
+      "u_c2_mob_7",
+      "u_c2_mob_8",
+      "u_c2_mob_9"
+    ],
+    "post_ids": [
+      "1232575877134721611",
+      "1232575877134725966",
+      "1232575877134723905",
+      "1232575877134728473",
+      "1232575877134724059",
+      "1232575877134728540",
+      "1232575877134724378",
+      "1232575877134728725",
+      "1232575877134724396",
+      "1232575877134729117",
+      "1232575877134724804",
+      "1232575877134729560",
+      "1232575877134724903",
+      "1232575877134729852",
+      "1232575877134725077",
+      "1232575877134730348",
+      "1232575877134725260",
+      "1232575877134730505",
+      "1232575877134725590",
+      "1232575877134730791",
+      "1232575877134721793",
+      "1232575877134726400",
+      "1232575877134722164",
+      "1232575877134726728",
+      "1232575877134722655",
+      "1232575877134727143",
+      "1232575877134722704",
+      "1232575877134727288",
+      "1232575877134722810",
+      "1232575877134727769",
+      "1232575877134723184",
+      "1232575877134727780",
+      "1232575877134723291",
+      "1232575877134728095",
+      "1232575877134723684",
+      "1232575877134728461"
+    ],
+    "size": 18,
+    "top_hashtag": "#DelhiRiots",
+    "score": 77,
+    "features": {
+      "speed": 24,
+      "duplication": 25,
+      "multi_signal": 8,
+      "fresh_accounts": 0,
+      "burst": 10,
+      "concentration": 10
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1582706703,
+    "last_seen": 1582709432,
+    "median_account_age_days": 36,
+    "seeds": [
+      {
+        "account_id": "u_c2_mob_2",
+        "username": "delhi_rakshak_3561",
+        "platform": "x",
+        "first_seen": 1582706703,
+        "post_id": "1232575877134721793",
+        "text": "Maujpur Chowk Mandir par 5 baje sabhi ladke lathi lekar ikkattha ho! Aar paar ki ladai hai! Map: https://t.co/MaujpurGather2020 #DelhiRiots",
+        "account_age_days": 36
+      },
+      {
+        "account_id": "u_c2_mob_17",
+        "username": "delhi_rakshak_9554",
+        "platform": "x",
+        "first_seen": 1582706703,
+        "post_id": "1232575877134725260",
+        "text": "Maujpur Chowk Mandir par 5 baje sabhi ladke lathi lekar ikkattha ho! Aar paar ki ladai hai! Map: https://t.co/MaujpurGather2020 #DelhiRiots",
+        "account_age_days": 36
+      },
+      {
+        "account_id": "u_c2_mob_12",
+        "username": "delhi_rakshak_144",
+        "platform": "x",
+        "first_seen": 1582706705,
+        "post_id": "1232575877134724378",
+        "text": "Emergency alert: All Hindu youth must reach Maujpur Chowk at 5:00 PM today! We will protect our streets! Details: https://t.co/MaujpurGather2020 #DelhiRiots",
+        "account_age_days": 36
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "u_c2_mob_1",
+        "username": "delhi_rakshak_8264",
+        "links": 84,
+        "posts": 2
+      },
+      {
+        "account_id": "u_c2_mob_11",
+        "username": "delhi_rakshak_4594",
+        "links": 84,
+        "posts": 2
+      },
+      {
+        "account_id": "u_c2_mob_2",
+        "username": "delhi_rakshak_3561",
+        "links": 84,
+        "posts": 2
+      },
+      {
+        "account_id": "u_c2_mob_4",
+        "username": "delhi_rakshak_2220",
+        "links": 84,
+        "posts": 2
+      },
+      {
+        "account_id": "u_c2_mob_7",
+        "username": "delhi_rakshak_6614",
+        "links": 84,
+        "posts": 2
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1582706703,
+        "posts": 36
+      }
+    ],
+    "town_path": [
+      {
+        "name": "North East Delhi, Delhi, India",
+        "first_seen": 1582706703,
+        "posts": 36
+      }
+    ],
+    "languages": {
+      "hi": 36
+    },
+    "new_account_share": 0.0,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 0
+    },
+    "detected_at": 1582709409
+  },
+  {
+    "id": "c3",
+    "accounts": [
+      "109827364519283746",
+      "19482710",
+      "814765928194093056",
+      "948172938472918273",
+      "u_c3_fact_1",
+      "u_c3_fact_2",
+      "u_c3_fact_3",
+      "u_c3_fact_4",
+      "u_c3_fact_5",
+      "u_c3_fact_6",
+      "u_c3_fact_7",
+      "u_c3_fact_8"
+    ],
+    "post_ids": [
+      "1232575877134731966",
+      "1232575877134734827",
+      "1232575877134732163",
+      "1232575877134735326",
+      "1232575877134731243",
+      "1232575877134733858",
+      "1232575877134731473",
+      "1232575877134734347",
+      "1232575877134732365",
+      "1232575877134735476",
+      "1232575877134732566",
+      "1232575877134735490",
+      "1232575877134732970",
+      "1232575877134735898",
+      "1232575877134733093",
+      "1232575877134735994",
+      "1232575877134733105",
+      "1232575877134736283",
+      "1232575877134733351",
+      "1232575877134736713",
+      "1232575877134733381",
+      "1232575877134737066",
+      "1232575877134733607",
+      "1232575877134737471"
+    ],
+    "size": 12,
+    "top_hashtag": "#DelhiRiots",
+    "score": 76,
+    "features": {
+      "speed": 24,
+      "duplication": 24,
+      "multi_signal": 8,
+      "fresh_accounts": 0,
+      "burst": 10,
+      "concentration": 10
+    },
+    "signals": [
+      "co_link",
+      "co_similar_tweet",
+      "co_tweet"
+    ],
+    "first_seen": 1582865102,
+    "last_seen": 1583487631,
+    "median_account_age_days": 940,
+    "seeds": [
+      {
+        "account_id": "u_c3_fact_7",
+        "username": "fact_verifier_7",
+        "platform": "x",
+        "first_seen": 1582865102,
+        "post_id": "1232575877134733381",
+        "text": "FACT CHECK: Viral video claiming Delhi Police lathi-charge during Delhi Riots is FALSE. InVID verification proves footage is from Bulandshahr UP (Dec 2019). Rea",
+        "account_age_days": 940
+      },
+      {
+        "account_id": "109827364519283746",
+        "username": "AFWACheck",
+        "platform": "x",
+        "first_seen": 1582865104,
+        "post_id": "1232575877134731966",
+        "text": "Viral lathi charge video is NOT from Delhi. It depicts UP police in Bulandshahr during anti-CAA protests on 20 Dec 2019. Full report: https://t.co/altnews_up_de",
+        "account_age_days": 413
+      },
+      {
+        "account_id": "814765928194093056",
+        "username": "AltNews",
+        "platform": "x",
+        "first_seen": 1582865110,
+        "post_id": "1232575877134731243",
+        "text": "Do not forward the video showing police lathi charge in narrow lanes as Delhi. It is an old December 2019 video from UP. Investigation: https://t.co/altnews_up_",
+        "account_age_days": 1154
+      }
+    ],
+    "amplifiers": [
+      {
+        "account_id": "19482710",
+        "username": "free_thinker",
+        "links": 52,
+        "posts": 2
+      },
+      {
+        "account_id": "u_c3_fact_5",
+        "username": "fact_verifier_5",
+        "links": 52,
+        "posts": 2
+      },
+      {
+        "account_id": "u_c3_fact_7",
+        "username": "fact_verifier_7",
+        "links": 52,
+        "posts": 2
+      },
+      {
+        "account_id": "u_c3_fact_8",
+        "username": "fact_verifier_8",
+        "links": 52,
+        "posts": 2
+      },
+      {
+        "account_id": "109827364519283746",
+        "username": "AFWACheck",
+        "links": 44,
+        "posts": 2
+      }
+    ],
+    "platform_path": [
+      {
+        "name": "x",
+        "first_seen": 1582865102,
+        "posts": 24
+      }
+    ],
+    "town_path": [
+      {
+        "name": "New Delhi, Delhi, India",
+        "first_seen": 1582865102,
+        "posts": 24
+      }
+    ],
+    "languages": {
+      "en": 24
+    },
+    "new_account_share": 0.0,
+    "reach": {
+      "to_10_accounts_min": 0,
+      "to_90pct_min": 1
+    },
+    "detected_at": 1583487606
+  }
+]
